@@ -1,0 +1,604 @@
+body {
+  font-size: 11px;
+  font-family: Verdana;
+  color: #afafaf;
+  text-align: center;
+  zoom: 1;
+  background: url('katanaBG.png') no-repeat top left #252525;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+li {
+  list-style-type: none;
+  padding: 2px 0;
+  position: relative;
+}
+
+ul {
+  padding: 8px 12px;
+  margin: 0;
+}
+
+#hudContainer {
+  opacity: 0.85;
+  zoom: 0.9;
+  position: relative;
+}
+
+#hud {
+  width: 460px;
+  float: left;
+  min-height: 220px;
+  position: relative;
+  background: rgba(55, 55, 55, 1);
+  margin: 50px;
+  border: 4px solid #484848;
+  border-radius: 10px;
+}
+
+.hudHeader {
+  width: 100%;
+  height: 40px;
+  cursor: move;
+}
+
+.hudFooter {
+  width: 100%;
+}
+
+.hudFooter {
+  clear: both;
+  position: absolute;
+  bottom: 0px;
+  background: #464646;
+  text-align: left;
+}
+
+.hudFooter span {
+  float: left;
+  margin: 5px 10px;
+  padding: 2px 5px;
+}
+
+.hudFooter .button {
+  float: right;
+  background: #A6A6A6;
+  text-transform: uppercase;
+  color: black;
+  margin: 5px 10px 5px 0;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.hudFooter .button:hover, .hudFooter .button.active {
+  background: #EAB729;
+  color: #000;
+  cursor: pointer;
+}
+
+.hudHeader h1 {
+    font-variant: all-small-caps;
+  font-size: 16px;
+  background: url('areaLight.png') 10px 7px no-repeat #464646;
+  padding: 4px 10px 5px 35px;
+  float: left;
+  color: #FFF;
+  font-weight: normal;
+  margin: 12px auto auto 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.hudHeader .buttons {
+  margin: 15px 10px auto auto;
+  float: right;
+  width: 125px;
+  height: 22px;
+  background: #2e2e2e;
+  border: 1px solid #3F3F3F;
+  font-size: 10px;
+  color: #828282;
+}
+
+.hudHeader .buttons ul {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.hudHeader .buttons li {
+  float: left;
+  list-style-type: none;
+  padding: 5px 10px;
+}
+
+.hudHeader .buttons li:hover {
+  color: #EAB729;
+  cursor: pointer;
+}
+
+.hudHeader .buttons li.border {
+  border-right: 1px solid #3F3F3F;
+}
+
+.hudHeader .buttons li.active {
+  background: #262626;
+  color: #EAB729;
+}
+
+.hudControls {
+  clear: both;
+  float: left;
+  margin: 10px 20px;
+}
+
+.hudControl {
+  float: left;
+  width: 100px;
+  height: 120px;
+  margin-right: 10px;
+}
+
+.hudControl.hueControl {
+  width: 200px;
+  margin: 0 auto auto auto;
+  text-align: left;
+}
+
+.hudControl h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+h2.active, input.active, h3.active {
+  color: #EAB729 !important;
+}
+
+.control {
+  height: 20px;
+}
+
+.hudControl input {
+  font-size: 35px;
+  width: 90px;
+  background: transparent;
+  border: 0;
+  color: #D3D3D3;
+  text-align: center;
+  outline: none;
+  cursor: ew-resize;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hue {
+  width: 240px;
+}
+
+.hue div {
+  float: left;
+  font-size: 13px;
+  margin-right: 20px;
+  padding-top: 10px;
+}
+
+.hue div.HSV {
+  width: 100px;
+}
+
+.increase {
+  background-image: url(up.png);
+  background-position: center top;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+.decrease {
+  background-image: url(down.png);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+.leftright {
+  background-image: url(left.png), url(right.png);
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+}
+
+#hudExtension {
+  width: 460px;
+  height: 170px;
+  display: none;
+  position: relative;
+  background: rgba(55, 55, 55, 1);
+  padding-bottom: 10px;
+  margin: 160px 50px 15px 0px;
+  border-top: 0;
+  border-radius: 10px;
+}
+
+.hudSlider {
+  float: left;
+  width: 200px;
+  text-align: left;
+  margin: auto 5px 10px 5px;
+  height: 40px;
+}
+
+.hudSlider h3 {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: normal;
+}
+
+svg circle {
+  fill: #252525;
+}
+
+.svgGreen {
+  stroke: #3b9450;
+}
+
+.svgGreen:hover {
+  fill: #3b9450;
+}
+
+.svgTeal {
+  stroke: #227d7c;
+}
+
+.svgTeal:hover {
+  fill: #227d7c;
+}
+
+.svgOrange {
+  stroke: #924a2b;
+}
+
+.svgOrange:hover {
+  fill: #924a2b
+}
+
+.svgPurple {
+  stroke: #7a477b;
+}
+
+.svgPurple:hover {
+  fill: #7a477b
+}
+
+.svgBrown {
+  stroke: #94743b;
+}
+
+.svgBrown:hover {
+  fill: #94743b
+}
+
+.svgYellow {
+  stroke: #ac9d37;
+}
+
+.svgYellow:hover {
+  fill: #ac9d37;
+}
+
+#node {
+  width: 150px;
+  position: relative;
+  background: #252525;
+  margin: 50px;
+  border: 2px solid #484848;
+}
+
+.nodeHeader {
+  max-height: 30px;
+  background: #4e4e4e;
+  padding: 10px;
+  margin: auto;
+  cursor: move;
+}
+
+.nodeUtils {
+  background: #3b3b3b;
+  padding: 5px;
+}
+
+.nodeTypeBox {
+  margin: 5px auto 2px;
+  padding: 3px;
+}
+
+.nodeTypeBox select {
+  width: 100%;
+  text-align: center;
+  color: #afafaf;
+  max-height: 20px;
+  background: #2b2b2b;
+  border: 1px solid #484848;
+  text-align-last: center;
+}
+
+.nodeFilterBox {
+  width: 90%;
+  max-height: 12px;
+  background: #2b2b2b;
+  background-image: url(filter.png);
+  background-position: left 5px center;
+  background-repeat: no-repeat;
+  border: 1px solid #484848;
+  padding: 3px;
+  margin: 2px auto 5px;
+}
+
+.parameterSection {}
+
+.parameters {
+  background: #252525;
+  height: 300px;
+  margin-right: 7px;
+}
+
+.parameterHeading {
+  background: #2f2f2f;
+  border-top: 1px solid #484848;
+  border-bottom: 1px solid #484848;
+  padding: 3px;
+  margin-top: 5px;
+  max-height: 15px;
+  width: 145px;
+  margin-left: 5px;
+}
+
+.top {
+  margin-top: 0px;
+}
+
+.pre {
+  top: 33 !important;
+}
+
+.first {
+  top: 10 !important;
+}
+
+.second {
+  top: 33 !important;
+}
+
+#overflow {
+  position: absolute;
+  width: 162px;
+  left: -6px;
+  z-index: 10;
+  overflow-y: hidden;
+  height: 300px;
+  padding-right: 6px;
+  overflow-x: hidden;
+}
+
+#overflow:hover {
+  overflow-y: scroll;
+  width: 168px;
+}
+
+.parameterSubHeading {
+  background: #2f2f2f;
+  background-image: url(dropdownArrow.png);
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  border: 1px solid #484848;
+  padding: 1px;
+  margin: 10px 10px 5px 10px;
+  max-height: 15px;
+  width: 138px
+}
+
+.scrollWrapper {
+  position: relative;
+}
+
+.parameterOutputs {
+  text-align: right;
+}
+
+.parameterBoth, .parameterOutputs {
+  position: static;
+}
+
+.parameterList {
+  margin: 0 auto;
+  width: 120px;
+}
+
+.lTerminals {
+  position: absolute;
+  left: 0px;
+  width: 10px;
+  top: 0;
+}
+
+.rTerminals ul, .lTerminals ul {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.parameterList ul {
+  margin: 0;
+  padding: 10px 0px 0px
+}
+
+.rTerminals {
+  position: absolute;
+  right: 0px;
+  width: 10px;
+  top: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4A4A4A;
+  border-radius: 10px;
+}
+
+.nodeFooter {
+  height: 15px;
+  margin-top: 5px;
+  background: #3b3b3b;
+  border-top: 1px solid #484848;
+  padding: 5px;
+}
+
+.dropbtn {
+  background-color: #303030;
+  color: #ADACAC;
+  padding: 2px 5px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  text-align: left;
+  background: #303030 url('dropdown.png') center right no-repeat;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #303030;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #ADACAC;
+  padding: 2px 5px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ADACAC;
+  color: #303030;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #ADACAC;
+  color: #303030;
+}
+
+.slider {
+  border-bottom: 1px solid #6E6E6E;
+  width: 120px;
+  margin-top: 15px;
+}
+
+.hudSlider input {
+  border: 0;
+  background: transparent;
+  font-size: 10px;
+  width: 20px;
+  float: right;
+  margin-right: -40px;
+  margin-top: -7px;
+  color: #afafaf;
+  outline: none;
+  cursor: default;
+}
+
+.hudSlider input.active {
+  color: #eab629;
+}
+
+.ui-slider {
+  position: relative;
+  text-align: left;
+}
+
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 0.8em;
+  height: 0.8em;
+  cursor: pointer;
+  -ms-touch-action: none;
+  touch-action: none;
+  margin-top: -4px;
+  outline: none;
+}
+
+.ui-slider .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: .7em;
+  display: block;
+  border: 0;
+  background-position: 0 0;
+}
+
+.ui-slider-handle {
+  background: #eab629;
+  font-weight: normal;
+  border-radius: 5px;
+  color: #454545;
+}
+
+.hue div input {
+background: url('colorWheel.png') no-repeat;
+width: 70px;
+height: 70px;
+cursor: pointer;
+color: #fff;
+font-size: 10px;
+text-indent: -999px;
+}
+
+#huePreview {
+  width:15px;
+  height: 15px;
+  border-radius: 10px;
+  margin-top: 13px;
+  float: right;
+  background-color: #fff;
+}
