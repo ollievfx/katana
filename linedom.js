@@ -48,8 +48,8 @@ var from = function () {},
 to = new String('to');
 from.y = fromPoint.top+10;
 from.x = fromPoint.left+10;
-to.y = toPoint.top-20;
-to.x = toPoint.left-20;
+to.y = toPoint.top+10;
+to.x = toPoint.left+10;
 
 $.line(from, to);
 

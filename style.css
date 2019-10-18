@@ -616,4 +616,5 @@ text-indent: -999px;
 }
 .jquery-line {
   background: rgba(150, 150, 150, 0.8) !important;
+  z-index: -999;
 }
