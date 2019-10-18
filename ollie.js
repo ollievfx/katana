@@ -58,10 +58,10 @@ $(function() {
   $("#hudContainer").draggable({
     drag: function(event, ui) {
       $(".jquery-line").remove();
-      ui.position.left = Math.max(0, ui.position.left);
-      ui.position.left = Math.min(400, ui.position.left);
-      ui.position.top = Math.min(440, ui.position.top);
-      ui.position.top = Math.max(80, ui.position.top);
+      ui.position.left = Math.max(8, ui.position.left);
+      ui.position.left = Math.min(520, ui.position.left);
+      ui.position.top = Math.min(530, ui.position.top);
+      ui.position.top = Math.max(95, ui.position.top);
 
       function getOffset( el ) {
           var _x = 0;
