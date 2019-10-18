@@ -403,7 +403,7 @@ svg circle {
 
 .parameterSubHeading {
   background: #2f2f2f;
-  background-image: url(dropdownArrow.png);
+  background-image: url(arrowdown.png);
   background-position: 10px center;
   background-repeat: no-repeat;
   border: 1px solid #484848;
