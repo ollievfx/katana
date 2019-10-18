@@ -4,7 +4,7 @@ body {
   color: #afafaf;
   text-align: center;
   zoom: 1;
-  background: url('katanaBG3.png') no-repeat top left #252525;
+  background: url('katana.png') no-repeat top left #252525;
   background-attachment: fixed;
   overflow-x: hidden;
 }
@@ -615,5 +615,5 @@ text-indent: -999px;
   visibility: hidden;
 }
 .jquery-line {
-  background: rgba(80, 80, 80, 0.8) !important; 
+  background: rgba(80, 80, 80, 0.8) !important;
 }
