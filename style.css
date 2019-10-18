@@ -99,7 +99,6 @@ ul {
 .hudHeader .buttons {
   margin: 15px 10px auto auto;
   float: right;
-  width: 125px;
   height: 22px;
   background: #2e2e2e;
   border: 1px solid #3F3F3F;
@@ -115,6 +114,7 @@ ul {
 
 .hudHeader .buttons li {
   float: left;
+    text-align: center;
   list-style-type: none;
   padding: 5px 10px;
 }
