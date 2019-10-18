@@ -615,5 +615,5 @@ text-indent: -999px;
   visibility: hidden;
 }
 .jquery-line {
-  background: rgba(80, 80, 80, 0.8) !important;
+  background: rgba(80, 80, 80, 0.8) !important; 
 }
