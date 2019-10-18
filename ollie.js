@@ -46,15 +46,45 @@ $(function() {
 });
 
 $(function() {
-  $("#node").draggable();
+  $("#node").draggable({
+    drag: function(event, ui) {
+      ui.position.left = Math.max(790, ui.position.left);
+      ui.position.left = Math.min(1400, ui.position.left);
+      ui.position.top = Math.min(190, ui.position.top);
+      ui.position.top = Math.max(80, ui.position.top);
+    }
+  });
 
   $("#hudContainer").draggable({
     drag: function(event, ui) {
+      $(".jquery-line").remove();
+      ui.position.left = Math.max(0, ui.position.left);
+      ui.position.left = Math.min(400, ui.position.left);
+      ui.position.top = Math.min(440, ui.position.top);
+      ui.position.top = Math.max(80, ui.position.top);
 
-      // Keep the left edge of the element
-      // at least 100 pixels from the container
-      ui.position.left = Math.min(975, ui.position.left);
-      ui.position.top = Math.min(10, ui.position.top);
+      function getOffset( el ) {
+          var _x = 0;
+          var _y = 0;
+          while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+              _x += el.offsetLeft - el.scrollLeft;
+              _y += el.offsetTop - el.scrollTop;
+              el = el.offsetParent;
+          }
+          return { top: _y, left: _x };
+      }
+
+      var fromPoint = getOffset($('#anchor')[0]);
+      var toPoint = getOffset($('#hud')[0]);
+
+      var from = function () {},
+      to = new String('to');
+      from.y = fromPoint.top+10;
+      from.x = fromPoint.left+10;
+      to.y = toPoint.top-30;
+      to.x = toPoint.left-30;
+
+      $.line(from, to);
     }
   });
 });

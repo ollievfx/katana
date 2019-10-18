@@ -4,7 +4,7 @@ body {
   color: #afafaf;
   text-align: center;
   zoom: 1;
-  background: url('katanaBG.png') no-repeat top left #252525;
+  background: url('katanaBG3.png') no-repeat top left #252525;
   background-attachment: fixed;
   overflow-x: hidden;
 }
@@ -25,9 +25,11 @@ ul {
 }
 
 #hudContainer {
-  opacity: 0.85;
+  opacity: 0.95;
   zoom: 0.9;
-  position: relative;
+  position: absolute;
+  left: 150px;
+  top:200px;
 }
 
 #hud {
@@ -300,7 +302,9 @@ svg circle {
 
 #node {
   width: 150px;
-  position: relative;
+  position: absolute;
+  left: 850px;
+  top: 100px;
   background: #252525;
   margin: 50px;
   border: 2px solid #484848;
@@ -601,4 +605,15 @@ text-indent: -999px;
   margin-top: 13px;
   float: right;
   background-color: #fff;
+}
+#anchor {
+  width:10px;
+  height:10px;
+  position:fixed;
+  left: 180px;
+  top: 190px;
+  visibility: hidden;
+}
+.jquery-line {
+  background: rgba(80, 80, 80, 0.8) !important;
 }

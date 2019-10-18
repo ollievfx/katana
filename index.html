@@ -6,12 +6,17 @@
   <link href='wheelcolorpicker.css' rel='stylesheet'>
   <script src="jquery-3.3.1.min.js"></script>
   <script src="jquery-ui.js"></script>
-  <script src="ollie.js"></script>
+
+  <script src="linedom.js"></script>
+    <script src="ollie.js"></script>
+
   <script type="text/javascript" src="jquery.wheelcolorpicker.js"></script>
 </head>
 
 <body>
-  <div id="node">
+<div id="anchor"></div>
+<div id="container">
+  <div id="node" class="element">
     <div class="nodeHeader"> DiffuseTex_CarUV </div>
     <div class="nodeUtils">
       <div class="nodeTypeBox">
@@ -239,7 +244,7 @@
     <div class="nodeFooter"> DlShadingNode </div>
 
   </div>
-  <div id="hudContainer">
+  <div id="hudContainer" class="element">
     <div id="hud">
       <div class="hudHeader">
         <h1>/root/lgt/arealight1</h1>
@@ -318,6 +323,7 @@
         <p id="solo" class="button">Solo</p>
       </div>
     </div>
+  </div>
 </div>
     <script>
       document.getElementById("intValue").addEventListener("mousedown", function(event) {
