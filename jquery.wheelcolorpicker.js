@@ -2063,8 +2063,8 @@
 
     // Reposition the popup window
     $widget.css({
-      top: (input.getBoundingClientRect().top - WCP.ORIGIN.top + $input.outerHeight()) - 200 + 'px',
-      left: (input.getBoundingClientRect().left - WCP.ORIGIN.left) - 100 + 'px'
+      top: (input.getBoundingClientRect().top - WCP.ORIGIN.top + $input.outerHeight()) -200 + 'px',
+      left: (input.getBoundingClientRect().left - WCP.ORIGIN.left) * 0.72 + 'px'
     });
 
     // Refresh widget with this instance's options

@@ -1,50 +1,5 @@
 $(function() { $('.colorWheel').wheelColorPicker(); });
 
-//$(function() {
-//  $('#huePreview').css("background-color", "#" + $('#hex').val() );
-//});
-
-$(function() {
-
-  var down = false;
-  var speed = 150;
-  var counter;
-  $("#intValue").mousedown(function() {
-    down = true;
-  });
-  $(document).mouseup(function() {
-    down = false;
-    clearInterval(counter);
-  });
-  $("#intValue").mouseenter(function(e) {
-    clearInterval(counter);
-  })
-
-  $("#intValue").mouseout(function(e) {
-    var current_value = $(this).val();
-    var self = $(this);
-
-    if (down) {
-      var $button = $(this);
-      $button.parent().find("h2").addClass("active");
-      $button.parent().find("input").addClass("active");
-
-      if (e.clientX > $("#intValue").offset().left) {
-        counter = setInterval(function() {
-          self.val(current_value++);
-        }, speed);
-      }
-      if (e.clientX < $("#intValue").offset().left) {
-        counter = setInterval(function() {
-          self.val(current_value--);
-        }, speed);
-      }
-    }
-
-
-  });
-});
-
 $(function() {
   $("#node").draggable({
     drag: function(event, ui) {
@@ -172,7 +127,6 @@ $(function() {
   });
   $("#coneAmount").val($("#coneSlider").slider("value"));
 
-
   $("#penumbraSlider").slider({
     orientation: "horizontal",
     range: "min",
@@ -237,4 +191,46 @@ $(function() {
     }
   });
   $("#spreadAmount").val($("#spreadSlider").slider("value"));
+});
+
+$(function() {
+
+  var down = false;
+  var speed = 150;
+  var counter;
+  $("#intValue").mousedown(function() {
+    down = true;
+  });
+
+  $(document).mouseup(function() {
+    down = false;
+    clearInterval(counter);
+  });
+  $("#intValue").mouseenter(function(e) {
+    clearInterval(counter);
+  })
+
+  $("#intValue").mouseout(function(e) {
+    var current_value = $(this).val();
+    var self = $(this);
+
+    if (down) {
+      var $button = $(this);
+      $button.parent().find("h2").addClass("active");
+      $button.parent().find("input").addClass("active");
+
+      if (e.clientX * 1.1 > $("#intValue").offset().left) {
+        counter = setInterval(function() {
+          self.val(current_value++);
+        }, speed);
+      }
+      if (e.clientX * 1.1 < $("#intValue").offset().left) {
+        counter = setInterval(function() {
+          self.val(current_value--);
+        }, speed);
+      }
+    }
+
+
+  });
 });

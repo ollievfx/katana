@@ -24,6 +24,8 @@ ul {
   margin: 0;
 }
 
+/* -------------------------- Hud -------------------------- */
+
 #hudContainer {
   opacity: 0.95;
   zoom: 0.8;
@@ -248,236 +250,6 @@ h2.active, input.active, h3.active {
   font-weight: normal;
 }
 
-svg circle {
-  fill: #252525;
-}
-
-.svgGreen {
-  stroke: #3b9450;
-}
-
-.svgGreen:hover {
-  fill: #3b9450;
-}
-
-.svgTeal {
-  stroke: #227d7c;
-}
-
-.svgTeal:hover {
-  fill: #227d7c;
-}
-
-.svgOrange {
-  stroke: #924a2b;
-}
-
-.svgOrange:hover {
-  fill: #924a2b
-}
-
-.svgPurple {
-  stroke: #7a477b;
-}
-
-.svgPurple:hover {
-  fill: #7a477b
-}
-
-.svgBrown {
-  stroke: #94743b;
-}
-
-.svgBrown:hover {
-  fill: #94743b
-}
-
-.svgYellow {
-  stroke: #ac9d37;
-}
-
-.svgYellow:hover {
-  fill: #ac9d37;
-}
-
-#node {
-  width: 150px;
-  position: absolute;
-  left: 850px;
-  top: 100px;
-  background: #252525;
-  margin: 50px;
-  border: 2px solid #484848;
-}
-
-.nodeHeader {
-  max-height: 30px;
-  background: #4e4e4e;
-  padding: 10px;
-  margin: auto;
-  cursor: move;
-}
-
-.nodeUtils {
-  background: #3b3b3b;
-  padding: 5px;
-}
-
-.nodeTypeBox {
-  margin: 5px auto 2px;
-  padding: 3px;
-}
-
-.nodeTypeBox select {
-  width: 100%;
-  text-align: center;
-  color: #afafaf;
-  max-height: 20px;
-  background: #2b2b2b;
-  border: 1px solid #484848;
-  text-align-last: center;
-}
-
-.nodeFilterBox {
-  width: 90%;
-  max-height: 12px;
-  background: #2b2b2b;
-  background-image: url(filter.png);
-  background-position: left 5px center;
-  background-repeat: no-repeat;
-  border: 1px solid #484848;
-  padding: 3px;
-  margin: 2px auto 5px;
-}
-
-.parameterSection {}
-
-.parameters {
-  background: #252525;
-  height: 300px;
-  margin-right: 7px;
-}
-
-.parameterHeading {
-  background: #2f2f2f;
-  border-top: 1px solid #484848;
-  border-bottom: 1px solid #484848;
-  padding: 3px;
-  margin-top: 5px;
-  max-height: 15px;
-  width: 145px;
-  margin-left: 5px;
-}
-
-.top {
-  margin-top: 0px;
-}
-
-.pre {
-  top: 33 !important;
-}
-
-.first {
-  top: 10 !important;
-}
-
-.second {
-  top: 33 !important;
-}
-
-#overflow {
-  position: absolute;
-  width: 162px;
-  left: -6px;
-  z-index: 10;
-  overflow-y: hidden;
-  height: 300px;
-  padding-right: 6px;
-  overflow-x: hidden;
-}
-
-#overflow:hover {
-  overflow-y: scroll;
-  width: 168px;
-}
-
-.parameterSubHeading {
-  background: #2f2f2f;
-  background-image: url(arrowdown.png);
-  background-position: 10px center;
-  background-repeat: no-repeat;
-  border: 1px solid #484848;
-  padding: 1px;
-  margin: 10px 10px 5px 10px;
-  max-height: 15px;
-  width: 138px
-}
-
-.scrollWrapper {
-  position: relative;
-}
-
-.parameterOutputs {
-  text-align: right;
-}
-
-.parameterBoth, .parameterOutputs {
-  position: static;
-}
-
-.parameterList {
-  margin: 0 auto;
-  width: 120px;
-}
-
-.lTerminals {
-  position: absolute;
-  left: 0px;
-  width: 10px;
-  top: 0;
-}
-
-.rTerminals ul, .lTerminals ul {
-  margin: 0 auto;
-  padding: 0;
-}
-
-.parameterList ul {
-  margin: 0;
-  padding: 10px 0px 0px
-}
-
-.rTerminals {
-  position: absolute;
-  right: 0px;
-  width: 10px;
-  top: 0;
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #4A4A4A;
-  border-radius: 10px;
-}
-
-.nodeFooter {
-  height: 15px;
-  margin-top: 5px;
-  background: #3b3b3b;
-  border-top: 1px solid #484848;
-  padding: 5px;
-}
 
 .dropbtn {
   background-color: #303030;
@@ -617,4 +389,238 @@ text-indent: -999px;
 .jquery-line {
   background: rgba(150, 150, 150, 0.8) !important;
   z-index: -999;
+}
+
+
+/* -------------------------- Node -------------------------- */
+
+svg circle {
+  fill: #252525;
+}
+
+.svgGreen {
+  stroke: #3b9450;
+}
+
+.svgGreen:hover {
+  fill: #3b9450;
+}
+
+.svgTeal {
+  stroke: #227d7c;
+}
+
+.svgTeal:hover {
+  fill: #227d7c;
+}
+
+.svgOrange {
+  stroke: #924a2b;
+}
+
+.svgOrange:hover {
+  fill: #924a2b
+}
+
+.svgPurple {
+  stroke: #7a477b;
+}
+
+.svgPurple:hover {
+  fill: #7a477b
+}
+
+.svgBrown {
+  stroke: #94743b;
+}
+
+.svgBrown:hover {
+  fill: #94743b
+}
+
+.svgYellow {
+  stroke: #ac9d37;
+}
+
+.svgYellow:hover {
+  fill: #ac9d37;
+}
+
+#node {
+  width: 150px;
+  position: absolute;
+  left: 850px;
+  top: 100px;
+  background: #252525;
+  margin: 50px;
+  border: 2px solid #484848;
+}
+
+.nodeHeader {
+  max-height: 30px;
+  background: #4e4e4e;
+  padding: 10px;
+  margin: auto;
+  cursor: move;
+}
+
+.nodeUtils {
+  background: #3b3b3b;
+  padding: 5px;
+}
+
+.nodeTypeBox {
+  margin: 5px auto 2px;
+  padding: 3px;
+}
+
+.nodeTypeBox select {
+  width: 100%;
+  text-align: center;
+  color: #afafaf;
+  max-height: 20px;
+  background: #2b2b2b;
+  border: 1px solid #484848;
+  text-align-last: center;
+}
+
+.nodeFilterBox {
+  width: 90%;
+  max-height: 12px;
+  background: #2b2b2b;
+  background-image: url(filter.png);
+  background-position: left 5px center;
+  background-repeat: no-repeat;
+  border: 1px solid #484848;
+  padding: 3px;
+  margin: 2px auto 5px;
+}
+
+.parameterSection {}
+
+.parameters {
+  background: #252525;
+  height: 300px;
+  margin-right: 7px;
+}
+
+.parameterHeading {
+  background: #2f2f2f;
+  border-top: 1px solid #484848;
+  border-bottom: 1px solid #484848;
+  padding: 3px;
+  margin-top: 5px;
+  max-height: 15px;
+  width: 145px;
+  margin-left: 5px;
+}
+
+.top {
+  margin-top: 0px;
+}
+
+.pre {
+  top: 33px !important;
+}
+
+.first {
+  top: 10px !important;
+}
+
+.second {
+  top: 33px !important;
+}
+
+#overflow {
+  position: absolute;
+  width: 162px;
+  left: -6px;
+  z-index: 10;
+  overflow-y: hidden;
+  height: 300px;
+  padding-right: 6px;
+  overflow-x: hidden;
+}
+
+#overflow:hover {
+  overflow-y: scroll;
+  width: 168px;
+}
+
+.parameterSubHeading {
+  background: #2f2f2f;
+  background-image: url(arrowdown.png);
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  border: 1px solid #484848;
+  padding: 1px;
+  margin: 10px 10px 5px 10px;
+  max-height: 15px;
+  width: 138px
+}
+
+.scrollWrapper {
+  position: relative;
+}
+
+.parameterOutputs {
+  text-align: right;
+}
+
+.parameterBoth, .parameterOutputs {
+  position: static;
+}
+
+.parameterList {
+  margin: 0 auto;
+  width: 120px;
+}
+
+.lTerminals {
+  position: absolute;
+  left: 0px;
+  width: 10px;
+  top: 10px;
+}
+
+.rTerminals ul, .lTerminals ul {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.parameterList ul {
+  margin: 0;
+  padding: 10px 0px 0px
+}
+
+.rTerminals {
+  position: absolute;
+  right: 0px;
+  width: 10px;
+  top: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4A4A4A;
+  border-radius: 10px;
+}
+
+.nodeFooter {
+  height: 15px;
+  margin-top: 5px;
+  background: #3b3b3b;
+  border-top: 1px solid #484848;
+  padding: 5px;
 }
