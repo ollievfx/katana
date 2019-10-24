@@ -25,13 +25,12 @@ ul {
 }
 
 /* -------------------------- Hud -------------------------- */
-
 #hudContainer {
   opacity: 0.95;
   zoom: 0.8;
   position: absolute;
   left: 150px;
-  top:200px;
+  top: 200px;
 }
 
 #hud {
@@ -86,7 +85,7 @@ ul {
 }
 
 .hudHeader h1 {
-    font-variant: all-small-caps;
+  font-variant: all-small-caps;
   font-size: 16px;
   background: url('areaLight.png') 10px 7px no-repeat #464646;
   padding: 4px 10px 5px 35px;
@@ -116,7 +115,7 @@ ul {
 
 .hudHeader .buttons li {
   float: left;
-    text-align: center;
+  text-align: center;
   list-style-type: none;
   padding: 5px 10px;
 }
@@ -250,7 +249,6 @@ h2.active, input.active, h3.active {
   font-weight: normal;
 }
 
-
 .dropbtn {
   background-color: #303030;
   color: #ADACAC;
@@ -361,39 +359,39 @@ h2.active, input.active, h3.active {
 }
 
 .hue div input {
-background: url('colorWheel.png') no-repeat;
-width: 70px;
-height: 70px;
-cursor: pointer;
-color: #fff;
-font-size: 10px;
-text-indent: -999px;
+  background: url('colorWheel.png') no-repeat;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 10px;
+  text-indent: -999px;
 }
 
 #huePreview {
-  width:15px;
+  width: 15px;
   height: 15px;
   border-radius: 10px;
   margin-top: 13px;
   float: right;
   background-color: #fff;
 }
+
 #anchor {
-  width:10px;
-  height:10px;
-  position:fixed;
+  width: 10px;
+  height: 10px;
+  position: fixed;
   left: 180px;
   top: 190px;
   visibility: hidden;
 }
+
 .jquery-line {
   background: rgba(150, 150, 150, 0.8) !important;
   z-index: -999;
 }
 
-
 /* -------------------------- Node -------------------------- */
-
 svg circle {
   fill: #252525;
 }
@@ -446,7 +444,7 @@ svg circle {
   fill: #ac9d37;
 }
 
-#node {
+#node, #sidebar {
   width: 150px;
   position: absolute;
   left: 850px;
@@ -454,6 +452,52 @@ svg circle {
   background: #252525;
   margin: 50px;
   border: 2px solid #484848;
+}
+
+#sidebar {
+  right: 0px;
+  left: auto;
+  top: 125px;
+  margin: 0 0 0 50px;
+  height: 554px;
+  border-bottom: 0;
+  background: #3B3B3B;
+  position: fixed;
+}
+
+#sidebar .parameters {
+  margin-right: 0;
+  height: 483px;
+}
+
+#sidebar #overflow {
+  height: 480px;
+  direction: rtl;
+  right: -12px;
+  left: auto;
+  padding-left: 6px;
+}
+
+#sidebar .nodeHeader {
+  cursor: auto;
+}
+
+.anchor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('sideAnchor.png') center center no-repeat #3B3B3B;
+  right: 153px;
+  top: 130px;
+  cursor: pointer;
+  border-left: 1px solid #484848;
+  border-top: 1px solid #484848;
+  border-bottom: 1px solid #484848;
+}
+
+.collapsed {
+  right: 0 !important;
+  background: url('sideAnchorCollapsed.png') center center no-repeat #3B3B3B;
 }
 
 .nodeHeader {
