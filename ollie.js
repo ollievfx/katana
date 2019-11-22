@@ -9,6 +9,33 @@ $(function() {
 });
 
 $(function() {
+  $("#p1").click(function() {
+    $("#p1group .parameterBoth").toggle();
+    $("#p1").toggleClass("expanded");
+  });
+  $("#p2").click(function() {
+    $("#p2group .parameterBoth").toggle();
+    $("#p2").toggleClass("expanded");
+  });
+  $("#nm1").click(function() {
+    $("#nm1group .parameterBoth").toggle();
+    $("#nm1").toggleClass("expanded");
+  });
+  $("#nm2").click(function() {
+    $("#nm2group .parameterBoth").toggle();
+    $("#nm2").toggleClass("expanded");
+  });
+  $("#nm3").click(function() {
+    $("#nm3group .parameterBoth").toggle();
+    $("#nm3").toggleClass("expanded");
+  });
+  $("#nm4").click(function() {
+    $("#nm4group .parameterBoth").toggle();
+    $("#nm4").toggleClass("expanded");
+  });
+});
+
+$(function() {
   $("#node").draggable({
     drag: function(event, ui) {
       ui.position.left = Math.max(790, ui.position.left);
@@ -56,6 +83,8 @@ $(function() {
 });
 
 $(document).ready(function() {
+    $("#nm3group .parameterBoth").hide();
+    $("#nm4group .parameterBoth").hide();
   $("#simple").click(function() {
     $("#hudExtension").hide();
     $("#extended").removeClass("active");
@@ -232,12 +261,12 @@ $(function() {
 
       if (e.clientX * 1.1 > $("#intValue").offset().left) {
         counter = setInterval(function() {
-          self.val(current_value++);
+          self.val((current_value++).toFixed(1));
         }, speed);
       }
       if (e.clientX * 1.1 < $("#intValue").offset().left) {
         counter = setInterval(function() {
-          self.val(current_value--);
+          self.val((current_value--).toFixed(1));
         }, speed);
       }
     }

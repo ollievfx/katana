@@ -472,10 +472,20 @@ svg circle {
 
 #sidebar #overflow {
   height: 480px;
+  width: 157px;
   direction: rtl;
-  right: -12px;
-  left: auto;
-  padding-left: 6px;
+ max-height: fit-content;
+}
+
+#sidebar .parameters {
+      max-height: fit-content;
+}
+
+#sidebar #overflow:hover {
+  overflow-y: scroll;
+  width: 163px;
+  margin-left: -18px;
+padding-left: 6px;
 }
 
 #sidebar .nodeHeader {
@@ -544,8 +554,8 @@ svg circle {
 
 .parameters {
   background: #252525;
-  height: 300px;
   margin-right: 7px;
+  max-height: 300px;
 }
 
 .parameterHeading {
@@ -564,31 +574,34 @@ svg circle {
 }
 
 .pre {
-  top: 33px !important;
+  top: 23px !important;
 }
 
 .first {
-  top: 10px !important;
+  top: 0px !important;
 }
 
 .second {
-  top: 33px !important;
+  top: 28px !important;
 }
 
 #overflow {
-  position: absolute;
   width: 162px;
-  left: -6px;
+  margin-left: -6px;
   z-index: 10;
   overflow-y: hidden;
-  height: 300px;
   padding-right: 6px;
   overflow-x: hidden;
+  max-height: 300px;
 }
 
 #overflow:hover {
   overflow-y: scroll;
   width: 168px;
+}
+
+#sidebar .parameterSubHeading {
+  margin: 10px 5px 10px 10px;
 }
 
 .parameterSubHeading {
@@ -598,9 +611,13 @@ svg circle {
   background-repeat: no-repeat;
   border: 1px solid #484848;
   padding: 1px;
-  margin: 10px 10px 5px 10px;
+  margin: 10px;
   max-height: 15px;
-  width: 138px
+  cursor: pointer;
+}
+
+.parameterSubHeading.expanded {
+  background-image: url(arrowside.png);
 }
 
 .scrollWrapper {
@@ -634,7 +651,7 @@ svg circle {
 
 .parameterList ul {
   margin: 0;
-  padding: 10px 0px 0px
+  padding: 0px;
 }
 
 .rTerminals {
