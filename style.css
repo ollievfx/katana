@@ -7,6 +7,7 @@ body {
   background: url('katana.png') no-repeat top left #252525;
   background-attachment: scroll;
   overflow-x: hidden;
+  height: 1161px;
 }
 
 html {
@@ -562,10 +563,14 @@ padding-left: 6px;
   background: #2f2f2f;
   border-top: 1px solid #484848;
   border-bottom: 1px solid #484848;
+  background-image: url(arrowside.png);
+  background-position: 10px center;
+  background-repeat: no-repeat;
   padding: 3px;
   margin-top: 5px;
   max-height: 15px;
   width: 145px;
+    cursor: pointer;
   margin-left: 5px;
 }
 
@@ -606,7 +611,7 @@ padding-left: 6px;
 
 .parameterSubHeading {
   background: #2f2f2f;
-  background-image: url(arrowdown.png);
+  background-image: url(arrowside.png);
   background-position: 10px center;
   background-repeat: no-repeat;
   border: 1px solid #484848;
@@ -616,8 +621,8 @@ padding-left: 6px;
   cursor: pointer;
 }
 
-.parameterSubHeading.expanded {
-  background-image: url(arrowside.png);
+.parameterSubHeading.expanded, .parameterHeading.expanded {
+  background-image: url(arrowdown.png);
 }
 
 .scrollWrapper {

@@ -49,20 +49,40 @@ $(function() {
     $("#p2").toggleClass("expanded");
   });
   $("#nm1").click(function() {
-    $("#nm1group .parameterBoth").toggle();
+    $("#nm1group").toggle();
     $("#nm1").toggleClass("expanded");
   });
   $("#nm2").click(function() {
-    $("#nm2group .parameterBoth").toggle();
+    $("#nm2group").toggle();
     $("#nm2").toggleClass("expanded");
   });
   $("#nm3").click(function() {
-    $("#nm3group .parameterBoth").toggle();
+    $("#nm3group").toggle();
     $("#nm3").toggleClass("expanded");
   });
   $("#nm4").click(function() {
-    $("#nm4group .parameterBoth").toggle();
+    $("#nm4group").toggle();
     $("#nm4").toggleClass("expanded");
+  });
+
+
+
+
+  $("#nm1dl").click(function() {
+    $("#nm1group .parameterBoth").toggle();
+    $("#nm1dl").toggleClass("expanded");
+  });
+  $("#nm2dl").click(function() {
+    $("#nm2group .parameterBoth").toggle();
+    $("#nm2dl").toggleClass("expanded");
+  });
+  $("#nm3dl").click(function() {
+    $("#nm3group .parameterBoth").toggle();
+    $("#nm3dl").toggleClass("expanded");
+  });
+  $("#nm4dl").click(function() {
+    $("#nm4group .parameterBoth").toggle();
+    $("#nm4dl").toggleClass("expanded");
   });
 });
 
@@ -116,6 +136,12 @@ $(function() {
 $(document).ready(function() {
   $("#networkmaterial2Params").hide();
   $("#networkmaterial3Params").hide();
+  $("#nm1group").hide();
+  $("#nm2group").hide();
+    $("#nm1group .parameterBoth").hide();
+    $("#nm2group .parameterBoth").hide();
+  $("#nm3group").hide();
+  $("#nm4group").hide();
     $("#nm3group .parameterBoth").hide();
     $("#nm4group .parameterBoth").hide();
   $("#simple").click(function() {
