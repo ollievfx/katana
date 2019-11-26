@@ -33,6 +33,10 @@ $(function() {
     $("#gaffernm1").removeClass("active");
     $("#gaffernm2").removeClass("active");
   });
+  $(".gafferHeader").click(function() {
+    $(".gafferInner").toggle();
+  });
+
 });
 
 $(function() {
