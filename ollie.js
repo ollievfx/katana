@@ -9,6 +9,33 @@ $(function() {
 });
 
 $(function() {
+  $("#gaffernm1").click(function() {
+    $("#networkmaterial1Params").show();
+    $("#gaffernm1").addClass("active");
+    $("#networkmaterial2Params").hide();
+    $("#networkmaterial3Params").hide();
+    $("#gaffernm2").removeClass("active");
+    $("#gaffernm3").removeClass("active");
+  });
+  $("#gaffernm2").click(function() {
+    $("#networkmaterial1Params").hide();
+    $("#networkmaterial2Params").show();
+    $("#gaffernm2").addClass("active");
+    $("#networkmaterial3Params").hide();
+    $("#gaffernm1").removeClass("active");
+    $("#gaffernm3").removeClass("active");
+  });
+  $("#gaffernm3").click(function() {
+    $("#networkmaterial1Params").hide();
+    $("#networkmaterial2Params").hide();
+    $("#networkmaterial3Params").show();
+    $("#gaffernm3").addClass("active");
+    $("#gaffernm1").removeClass("active");
+    $("#gaffernm2").removeClass("active");
+  });
+});
+
+$(function() {
   $("#p1").click(function() {
     $("#p1group .parameterBoth").toggle();
     $("#p1").toggleClass("expanded");
@@ -83,6 +110,8 @@ $(function() {
 });
 
 $(document).ready(function() {
+  $("#networkmaterial2Params").hide();
+  $("#networkmaterial3Params").hide();
     $("#nm3group .parameterBoth").hide();
     $("#nm4group .parameterBoth").hide();
   $("#simple").click(function() {

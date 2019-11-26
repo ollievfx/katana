@@ -5,7 +5,7 @@ body {
   text-align: center;
   zoom: 1;
   background: url('katana.png') no-repeat top left #252525;
-  background-attachment: fixed;
+  background-attachment: scroll;
   overflow-x: hidden;
 }
 
@@ -462,7 +462,7 @@ svg circle {
   height: 554px;
   border-bottom: 0;
   background: #3B3B3B;
-  position: fixed;
+
 }
 
 #sidebar .parameters {
@@ -684,4 +684,92 @@ padding-left: 6px;
   background: #3b3b3b;
   border-top: 1px solid #484848;
   padding: 5px;
+}
+
+
+
+
+.gafferbox {
+  width: 560px;
+  height: 300px;
+  background: #383838;
+  position: absolute;
+  top: 710px;
+}
+
+.gafferHeader {
+  height: 30px;
+  padding: 5px 5px 5px 70px;
+  text-align: left;
+
+background-image: url('paramIcons.png'), url('dropdownFolder.png');
+background-position: right 10px, 10px 10px;
+background-repeat: no-repeat, no-repeat;
+}
+
+.editFlag {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #529652;
+}
+.nodeType {color: #757575;}
+.gafferInner {
+  background: #2e2e2e;
+  margin: 5px;
+  padding: 2px
+  height: 100%;
+  text-align: left;
+}
+.table {
+
+background: #2e2e2e;
+padding: 5px;
+
+}
+
+.table .header {background: #2e2e2e;
+border-bottom: 1px solid #000;}
+  .table div {padding: 5px; cursor: pointer;}
+  .table .base {height: 30px;}
+
+  .table .light {
+    background: #383838;
+  }
+
+  .table .dark {
+    background: #333333;
+  }
+
+  .table .active {
+    background: #4d4d4d;
+    border: 1px;
+    border-style: dotted;
+    border-color: #747474;
+  }
+
+  #tabs div {
+    float: left;
+    padding: 5px;
+    margin-right: 10px;
+    border-right: 1px solid #383838;
+  }
+  #tabs .active {color: #fff;}
+  #params {
+    margin: 30px auto;
+    clear: both;
+  }
+.parameterRow {
+  clear: both;
+  margin: 10px;
+  width: 100%;
+}
+.parameterRow input {
+  background: #262626;
+  margin-left: 10px;
+  width: 350px;
+  position: absolute;
+  border: 0;
+  left: 125px;
+  color: white;
 }
