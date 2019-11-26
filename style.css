@@ -735,15 +735,20 @@ padding: 5px;
 
 .table .header {background: #2e2e2e;
 border-bottom: 1px solid #000;}
-  .table div {padding: 5px; cursor: pointer;}
+  .table div {padding: 5px 15px; cursor: pointer;}
+  .table div.namespace {padding: 5px; border: 0;}
   .table .base {height: 30px;}
 
   .table .light {
     background: #383838;
+
+    border: 1px solid rgba(0, 0, 0, 0);
+
   }
 
   .table .dark {
     background: #333333;
+        border: 1px solid rgba(0, 0, 0, 0);
   }
 
   .table .active {
@@ -806,3 +811,36 @@ outline: none;
     height: 125px;
     background: url('3.png') top left no-repeat;
   }
+  .table div {
+    position: relative;
+  }
+
+  .table span.renderer {
+    position: absolute;
+    left: 140px;
+    border: 0;
+    text-indent: -999px;
+    width: 16px;
+    height: 16px;
+  }
+  .dl {
+        background: url('3dl2.png') top left no-repeat;
+  }
+  .prman {
+        background: url('prman3.png') top left no-repeat;
+  }
+.table span.terminal {
+  position: absolute;
+  left: 200px;
+  border: 0;
+}
+
+.table span.terminal:nth-of-type(3n) {
+  left: 240px;
+}
+
+.table span.active {
+color: #529652;
+  border: 0;
+    background: none !important;
+}

@@ -134,6 +134,7 @@ $(function() {
 });
 
 $(document).ready(function() {
+  $("#gaffernm1").addClass("active");
   $("#networkmaterial2Params").hide();
   $("#networkmaterial3Params").hide();
   $("#nm1group").hide();
@@ -144,6 +145,8 @@ $(document).ready(function() {
   $("#nm4group").hide();
     $("#nm3group .parameterBoth").hide();
     $("#nm4group .parameterBoth").hide();
+
+
   $("#simple").click(function() {
     $("#hudExtension").hide();
     $("#extended").removeClass("active");
