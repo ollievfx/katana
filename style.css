@@ -4,10 +4,33 @@ body {
   color: #afafaf;
   text-align: center;
   zoom: 1;
-  background: url('katana.png') no-repeat top left #252525;
+  background: url('katana.png') no-repeat top left #2e2e2e;
   background-attachment: scroll;
   overflow-x: hidden;
   height: 1161px;
+}
+
+#viewerContainer {
+  position: absolute;
+  top: 60px;
+  width: 825px;
+  height: 620px;
+}
+
+#nodeGraphContainer {
+  position: absolute;
+  top: 60px;
+  left: 830px;
+  width: 510px;
+  height: 620px;
+}
+
+#parameterContainer {
+  position: absolute;
+  top: 65px;
+  left: 1350px;
+  width: 500px;
+  height: 620px;
 }
 
 html {
@@ -448,8 +471,7 @@ svg circle {
 #node, #sidebar {
   width: 150px;
   position: absolute;
-  left: 850px;
-  top: 100px;
+  top: 0px;
   background: #252525;
   margin: 50px;
   border: 2px solid #484848;
@@ -458,12 +480,11 @@ svg circle {
 #sidebar {
   right: 0px;
   left: auto;
-  top: 125px;
+  top: 65px;
   margin: 0 0 0 50px;
   height: 554px;
   border-bottom: 0;
   background: #3B3B3B;
-
 }
 
 #sidebar .parameters {
@@ -475,18 +496,18 @@ svg circle {
   height: 480px;
   width: 157px;
   direction: rtl;
- max-height: fit-content;
+  max-height: fit-content;
 }
 
 #sidebar .parameters {
-      max-height: fit-content;
+  max-height: fit-content;
 }
 
 #sidebar #overflow:hover {
   overflow-y: scroll;
   width: 163px;
   margin-left: -18px;
-padding-left: 6px;
+  padding-left: 6px;
 }
 
 #sidebar .nodeHeader {
@@ -499,7 +520,7 @@ padding-left: 6px;
   height: 20px;
   background: url('sideAnchor.png') center center no-repeat #3B3B3B;
   right: 153px;
-  top: 130px;
+  top: 75px;
   cursor: pointer;
   border-left: 1px solid #484848;
   border-top: 1px solid #484848;
@@ -570,7 +591,7 @@ padding-left: 6px;
   margin-top: 5px;
   max-height: 15px;
   width: 145px;
-    cursor: pointer;
+  cursor: pointer;
   margin-left: 5px;
 }
 
@@ -691,25 +712,21 @@ padding-left: 6px;
   padding: 5px;
 }
 
-
-
-
 .gafferbox {
   width: 560px;
-  height: 300px;
   background: #383838;
   position: absolute;
-  top: 710px;
+  top: 40px;
 }
 
 .gafferHeader {
   height: 30px;
   padding: 5px 5px 5px 70px;
   text-align: left;
-
-background-image: url('paramIcons.png'), url('dropdownFolder.png');
-background-position: right 10px, 10px 10px;
-background-repeat: no-repeat, no-repeat;
+  cursor: pointer;
+  background-image: url('paramIcons.png'), url('dropdownFolder.png');
+  background-position: right 10px, 10px 10px;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .editFlag {
@@ -718,7 +735,11 @@ background-repeat: no-repeat, no-repeat;
   height: 10px;
   background: #529652;
 }
-.nodeType {color: #757575;}
+
+.nodeType {
+  color: #757575;
+}
+
 .gafferInner {
   background: #2e2e2e;
   margin: 5px;
@@ -726,55 +747,96 @@ background-repeat: no-repeat, no-repeat;
   height: 100%;
   text-align: left;
 }
+
 .table {
-
-background: #2e2e2e;
-padding: 5px;
-
+  background: #2e2e2e;
+  padding: 5px;
 }
 
-.table .header {background: #2e2e2e;
-border-bottom: 1px solid #000;}
-  .table div {padding: 5px 15px; cursor: pointer;}
-  .table div.namespace {padding: 5px; border: 0;}
-  .table .base {height: 30px;}
+.table .header {
+  background: #2e2e2e;
+  border-bottom: 1px solid #000;
+  height: 10px;
+}
 
-  .table .light {
-    background: #383838;
+.table .header span {
+  position: absolute;
+  left: 15px;
+  top: 0px;
+}
 
-    border: 1px solid rgba(0, 0, 0, 0);
+.table .header span:nth-of-type(2n) {
+  left: 140px;
+}
 
-  }
+.table .header span:nth-of-type(3n) {
+  left: 220px;
+}
 
-  .table .dark {
-    background: #333333;
-        border: 1px solid rgba(0, 0, 0, 0);
-  }
+.table div {
+  padding: 5px 15px;
+  cursor: pointer;
+}
 
-  .table .active {
-    background: #4d4d4d;
-    border: 1px;
-    border-style: dotted;
-    border-color: #747474;
-  }
+.table .base {
+  height: 30px;
+}
 
-  #tabs div {
-    float: left;
-        padding-right: 10px;
-        padding: 0px 10px 5px 10px;
-        border-right: 1px solid #444;
-        border-bottom: 1px solid #444;
-  }
-  #tabs .active {color: #fff; border-bottom: 0;}
-  #params {
-    margin: 30px auto 10px;
-    clear: both;
-  }
+/*.table .light, .table .dark {
+  background-image: url('child.png') !important;
+  background-position: top left !important;
+  background-repeat: no-repeat !important;
+}*/
+.table div.namespace {
+  padding: 5px;
+  border: 0;
+}
+
+.table .light {
+  background: #383838;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.table .dark {
+  background: #333333;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.table .namespace, .table .base {
+  background-image: none !important;
+}
+
+.table .active {
+  background: #4d4d4d;
+  border: 1px;
+  border-style: dotted;
+  border-color: #747474;
+}
+
+#tabs div {
+  float: left;
+  padding-right: 10px;
+  padding: 0px 10px 5px 10px;
+  border-right: 1px solid #444;
+  border-bottom: 1px solid #444;
+}
+
+#tabs .active {
+  color: #fff;
+  border-bottom: 0;
+}
+
+#params {
+  margin: 30px auto 10px;
+  clear: both;
+}
+
 .parameterRow {
   clear: both;
   margin: 10px;
   width: 100%;
 }
+
 .parameterRow input {
   background: #262626;
   margin-left: 10px;
@@ -783,64 +845,87 @@ border-bottom: 1px solid #000;}
   border: 0;
   left: 125px;
   color: #afafaf;
-outline: none;
+  outline: none;
+  padding-left: 10px;
 }
 
 #tabs {
-      margin-bottom: 15px;
-      float: left;
-      margin-top: 15px;
-      width: 100%;
+  margin-bottom: 15px;
+  float: left;
+  margin-top: 15px;
+  width: 100%;
 }
 
-  .parameterInterface1 {
-    clear: both;
-    width: 500px;
-    height: 125px;
-    background: url('1.png') top left no-repeat;
-  }
-  .parameterInterface2 {
-        clear: both;
-    width: 500px;
-    height: 125px;
-    background: url('2.png') top left no-repeat;
-  }
-  .parameterInterface3 {
-        clear: both;
-    width: 500px;
-    height: 125px;
-    background: url('3.png') top left no-repeat;
-  }
-  .table div {
-    position: relative;
-  }
+.parameterInterface1 {
+  clear: both;
+  width: 500px;
+  height: 125px;
+}
 
-  .table span.renderer {
-    position: absolute;
-    left: 140px;
-    border: 0;
-    text-indent: -999px;
-    width: 16px;
-    height: 16px;
-  }
-  .dl {
-        background: url('3dl2.png') top left no-repeat;
-  }
-  .prman {
-        background: url('prman3.png') top left no-repeat;
-  }
+.parameterInterface2 {
+  clear: both;
+  width: 500px;
+  height: 125px;
+}
+
+.parameterInterface3 {
+  clear: both;
+  width: 500px;
+  height: 125px;
+}
+
+.table div {
+  position: relative;
+}
+
+.table span.renderer {
+  position: absolute;
+  left: 155px;
+  border: 0;
+  text-indent: -9999px;
+  width: 16px;
+  height: 16px;
+}
+
+.dl {
+  background: url('3dl2.png') top left no-repeat;
+}
+
+.prman {
+  background: url('prman3.png') top left no-repeat;
+}
+
+.vray {
+  background: url('vray.png') top left no-repeat;
+}
+
 .table span.terminal {
   position: absolute;
-  left: 200px;
+  left: 220px;
   border: 0;
-}
-
-.table span.terminal:nth-of-type(3n) {
-  left: 240px;
 }
 
 .table span.active {
-color: #529652;
+  color: #529652;
   border: 0;
-    background: none !important;
+  background: none !important;
+}
+
+.parametersBox {
+  background: #383838;
+  margin: 5px;
+  background-image: url(arrowdown.png);
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+}
+
+.parametersBox p {
+  padding: 5px;
+  margin: 0 0 0 20px;
+}
+
+.parametersBoxInner {
+  background: #2e2e2e;
+  margin-left: 10px;
+  padding: 10px;
 }

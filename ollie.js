@@ -11,28 +11,68 @@ $(function() {
 $(function() {
   $("#gaffernm1").click(function() {
     $("#networkmaterial1Params").show();
-    $("#gaffernm1").addClass("active");
     $("#networkmaterial2Params").hide();
     $("#networkmaterial3Params").hide();
+    $("#networkmaterial4Params").hide();
+    $("#networkmaterial5Params").hide();
+    $("#gaffernm1").addClass("active");
     $("#gaffernm2").removeClass("active");
     $("#gaffernm3").removeClass("active");
+    $("#gaffernm4").removeClass("active");
+    $("#gaffernm5").removeClass("active");
   });
   $("#gaffernm2").click(function() {
     $("#networkmaterial1Params").hide();
     $("#networkmaterial2Params").show();
-    $("#gaffernm2").addClass("active");
     $("#networkmaterial3Params").hide();
+    $("#networkmaterial4Params").hide();
+    $("#networkmaterial5Params").hide();
     $("#gaffernm1").removeClass("active");
+    $("#gaffernm2").addClass("active");
     $("#gaffernm3").removeClass("active");
+    $("#gaffernm4").removeClass("active");
+    $("#gaffernm5").removeClass("active");
   });
   $("#gaffernm3").click(function() {
     $("#networkmaterial1Params").hide();
     $("#networkmaterial2Params").hide();
     $("#networkmaterial3Params").show();
-    $("#gaffernm3").addClass("active");
+    $("#networkmaterial4Params").hide();
+    $("#networkmaterial5Params").hide();
     $("#gaffernm1").removeClass("active");
     $("#gaffernm2").removeClass("active");
+    $("#gaffernm3").addClass("active");
+    $("#gaffernm4").removeClass("active");
+    $("#gaffernm5").removeClass("active");
   });
+  $("#gaffernm4").click(function() {
+    $("#networkmaterial1Params").hide();
+    $("#networkmaterial2Params").hide();
+    $("#networkmaterial3Params").hide();
+    $("#networkmaterial4Params").show();
+    $("#networkmaterial5Params").hide();
+    $("#gaffernm1").removeClass("active");
+    $("#gaffernm2").removeClass("active");
+    $("#gaffernm3").removeClass("active");
+    $("#gaffernm4").addClass("active");
+    $("#gaffernm5").removeClass("active");
+  });
+
+  $("#gaffernm5").click(function() {
+    $("#networkmaterial1Params").hide();
+    $("#networkmaterial2Params").hide();
+    $("#networkmaterial3Params").hide();
+    $("#networkmaterial4Params").hide();
+    $("#networkmaterial5Params").show();
+    $("#gaffernm1").removeClass("active");
+    $("#gaffernm2").removeClass("active");
+    $("#gaffernm3").removeClass("active");
+    $("#gaffernm4").removeClass("active");
+    $("#gaffernm5").addClass("active");
+  });
+
+
+
   $(".gafferHeader").click(function() {
     $(".gafferInner").toggle();
   });
@@ -87,14 +127,7 @@ $(function() {
 });
 
 $(function() {
-  $("#node").draggable({
-    drag: function(event, ui) {
-      ui.position.left = Math.max(790, ui.position.left);
-      ui.position.left = Math.min(1400, ui.position.left);
-      ui.position.top = Math.min(190, ui.position.top);
-      ui.position.top = Math.max(80, ui.position.top);
-    }
-  });
+  $("#node").draggable();
 
   $("#hudContainer").draggable({
     drag: function(event, ui) {
@@ -137,6 +170,8 @@ $(document).ready(function() {
   $("#gaffernm1").addClass("active");
   $("#networkmaterial2Params").hide();
   $("#networkmaterial3Params").hide();
+  $("#networkmaterial4Params").hide();
+    $("#networkmaterial5Params").hide();
   $("#nm1group").hide();
   $("#nm2group").hide();
     $("#nm1group .parameterBoth").hide();
