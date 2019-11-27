@@ -90,6 +90,7 @@ $(function() {
   });
   $("#nm1").click(function() {
     $("#nm1group").toggle();
+    $("#nm1group2").toggle();
     $("#nm1").toggleClass("expanded");
   });
   $("#nm2").click(function() {
@@ -115,6 +116,10 @@ $(function() {
   $("#nm1dl").click(function() {
     $("#nm1group .parameterBoth").toggle();
     $("#nm1dl").toggleClass("expanded");
+  });
+  $("#nm1hydra").click(function() {
+    $("#nm1group2 .parameterBoth").toggle();
+    $("#nm1hydra").toggleClass("expanded");
   });
   $("#nm2dl").click(function() {
     $("#nm2group .parameterBoth").toggle();
@@ -181,11 +186,13 @@ $(document).ready(function() {
   $("#networkmaterial4Params").hide();
     $("#networkmaterial5Params").hide();
   $("#nm1group").hide();
+  $("#nm1group2").hide();
   $("#nm2group").hide();
   $("#nm3group").hide();
   $("#nm4group").hide();
     $("#nm5group").hide();
     $("#nm1group .parameterBoth").hide();
+    $("#nm1group2 .parameterBoth").hide();
     $("#nm2group .parameterBoth").hide();
     $("#nm3group .parameterBoth").hide();
     $("#nm4group .parameterBoth").hide();
