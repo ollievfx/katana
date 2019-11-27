@@ -665,18 +665,23 @@
       <div class="gafferHeader">
         <p>NetworkMaterial <span class="editFlag"></span> <span class="nodeType">NetworkMaterialCreate</span></p>
       </div>
+      <div class="gafferLocation">
+      <div id="params">
+        <div class="parameterRow">Location <input value="/root/" /></div>
+      </div>
+</div>
       <div class="gafferInner">
 
         <div class="table">
-          <div class="header"><span>Name</span><span>Renderer</span><span>Terminals</span></div>
+          <div class="header"><span>Name</span><span>Renderer(s)</span><span>Terminals</span></div>
           <div class="dark namespace" id="namespace1">Namespace1</div>
-          <div class="light" id="gaffernm1">NetworkMaterial1 <span class="renderer dl">dl</span> <span class="terminal"><span class="active">dlSurface</span>, dlDisplacement, dlLight, <span class="active">dlVolume</span></span></div>
-          <div class="dark" id="gaffernm2">NetworkMaterial2 <span class="renderer dl">dl</span> <span class="terminal"><span class="active">dlSurface</span>, dlDisplacement, dlLight, dlVolume</span></div>
+          <div class="light" id="gaffernm1">NetworkMaterial1 <span class="renderer dl">dl</span> <span class="renderer hydra">H</span> <span class="terminal"><span >dlSurface</span>, <span >dlVolume</span>, <span >hydraSurface</span></span></div>
+          <div class="dark" id="gaffernm2">NetworkMaterial2 <span class="renderer dl">dl</span> <span class="terminal"><span >dlSurface</span></span></div>
           <div class="dark namespace" id="namespace2">Namespace2</div>
-          <div class="light" id="gaffernm3">NetworkMaterial3 <span class="renderer prman">prman</span> <span class="terminal"><span class="active">dlSurface</span>, <span class="active">dlDisplacement</span>, dlLight, dlVolume</span></div>
+          <div class="light" id="gaffernm3">NetworkMaterial3 <span class="renderer prman">prman</span> <span class="terminal"><span >PxrSurface</span>, <span >dlDisplacement</span></span></div>
           <div class="dark namespace" id="namespace3">Namespace3</div>
-          <div class="light" id="gaffernm4">NetworkMaterial4 <span class="renderer vray">vray</span> <span class="terminal"><span class="active">dlSurface</span>, <span class="active">dlDisplacement</span>, dlLight, dlVolume</span></div>
-          <div class="dark" id="gaffernm5">NetworkMaterial5 <span class="renderer vray">vray</span> <span class="terminal"><span class="active">dlSurface</span>, <span class="active">dlDisplacement</span>, dlLight, dlVolume</span></div>
+          <div class="light" id="gaffernm4">NetworkMaterial4 <span class="renderer vray">vray</span> <span class="terminal"><span >Surface</span>, <span >ExtraTex</span></span></div>
+          <div class="dark" id="gaffernm5">NetworkMaterial5 <span class="renderer vray">vray</span> <span class="terminal"><span >Surface</span>, <span >Disp</span></span></div>
 
           <div class="dark base">&nbsp;</div>
         </div>

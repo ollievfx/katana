@@ -748,6 +748,17 @@ svg circle {
   text-align: left;
 }
 
+.gafferLocation {
+  background: ;
+  margin: 5px 5px 15px 5px;
+  padding: 2px;
+  height: 100%;
+  text-align: left;
+}
+
+.gafferLocation #params
+{margin-top:10px;}
+
 .table {
   background: #2e2e2e;
   padding: 5px;
@@ -887,8 +898,16 @@ svg circle {
   height: 16px;
 }
 
+.table span.renderer:nth-of-type(2n) {
+  left: 175px;
+}
+
 .dl {
   background: url('3dl2.png') top left no-repeat;
+}
+
+.hydra {
+  background: url('hydra.png') top left no-repeat;
 }
 
 .prman {
