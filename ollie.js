@@ -104,6 +104,10 @@ $(function() {
     $("#nm4group").toggle();
     $("#nm4").toggleClass("expanded");
   });
+  $("#nm5").click(function() {
+    $("#nm5group").toggle();
+    $("#nm5").toggleClass("expanded");
+  });
 
 
 
@@ -123,6 +127,10 @@ $(function() {
   $("#nm4dl").click(function() {
     $("#nm4group .parameterBoth").toggle();
     $("#nm4dl").toggleClass("expanded");
+  });
+  $("#nm5dl").click(function() {
+    $("#nm5group .parameterBoth").toggle();
+    $("#nm5dl").toggleClass("expanded");
   });
 });
 
@@ -174,12 +182,14 @@ $(document).ready(function() {
     $("#networkmaterial5Params").hide();
   $("#nm1group").hide();
   $("#nm2group").hide();
-    $("#nm1group .parameterBoth").hide();
-    $("#nm2group .parameterBoth").hide();
   $("#nm3group").hide();
   $("#nm4group").hide();
+    $("#nm5group").hide();
+    $("#nm1group .parameterBoth").hide();
+    $("#nm2group .parameterBoth").hide();
     $("#nm3group .parameterBoth").hide();
     $("#nm4group .parameterBoth").hide();
+    $("#nm5group .parameterBoth").hide();
 
 
   $("#simple").click(function() {
