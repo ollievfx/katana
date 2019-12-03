@@ -422,6 +422,7 @@ svg circle {
 
 .svgGreen {
   stroke: #3b9450;
+  fill: #3b9450;
 }
 
 .svgGreen:hover {
@@ -466,6 +467,14 @@ svg circle {
 
 .svgYellow:hover {
   fill: #ac9d37;
+}
+
+.svgGrey {
+  stroke: grey;
+}
+
+.svgGrey:hover {
+  fill: grey;
 }
 
 #node, #sidebar {
