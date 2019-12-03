@@ -137,6 +137,37 @@ $(function() {
     $("#nm5group .parameterBoth").toggle();
     $("#nm5dl").toggleClass("expanded");
   });
+
+
+
+
+  $("#networkmaterial1Params .nodeParameters").click(function() {
+    $(".materialInterface").removeClass("active");
+    $(".nodeParameters").addClass("active");
+    $(".interfaceControls").removeClass("active");
+    $(".nodeParameterContainer").show();
+    $(".materialInterfaceContainer").hide();
+    $(".interfaceControlsContainer").hide();
+  });
+
+  $("#networkmaterial1Params .interfaceControls").click(function() {
+    $(".materialInterface").removeClass("active");
+    $(".nodeParameters").removeClass("active");
+    $(".interfaceControls").addClass("active");
+    $(".nodeParameterContainer").hide();
+    $(".materialInterfaceContainer").hide();
+    $(".interfaceControlsContainer").show();
+  });
+
+  $("#networkmaterial1Params .materialInterface").click(function() {
+    $(".materialInterface").addClass("active");
+    $(".nodeParameters").removeClass("active");
+    $(".interfaceControls").removeClass("active");
+    $(".nodeParameterContainer").hide();
+    $(".materialInterfaceContainer").show();
+    $(".interfaceControlsContainer").hide();
+  });
+
 });
 
 $(function() {
@@ -197,6 +228,8 @@ $(document).ready(function() {
     $("#nm3group .parameterBoth").hide();
     $("#nm4group .parameterBoth").hide();
     $("#nm5group .parameterBoth").hide();
+    $(".materialInterfaceContainer").hide();
+
 
 
   $("#simple").click(function() {
