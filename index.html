@@ -741,7 +741,8 @@
       <div class="gafferInner">
         <div class="gafferLocation">
         <div id="params">
-          <div class="parameterRow">Base Location<input value="/" /></div>
+          <div class="parameterRow jump">
+            <input value="/root/world/material"></div>
         </div>
   </div>
 
@@ -749,55 +750,33 @@
           <div class="header">
             <span>Name</span>
             <span>Renderer(s)</span>
-            <span>Terminals</span>
+            <span>Active Terminals</span>
             <span>MakeInteractive</span>
           </div>
           <div class="dark namespace" id="namespace1">Namespace1</div>
           <div class="light" id="gaffernm1">NetworkMaterial1
-            <span class="renderer dl">dl</span>
-            <span class="renderer hydra">H</span>
+            <span class="renderer" title="dl, hydra">2</span>
             <span class="terminal">
-            <span title="dlSurface" class="on">dlSurface</span>
-            <span title="dlLight">dlLight</span>
-            <span title="dlLightFilter">dlLightFilter</span>
-            <span title="dlDisplacement" class="on">dlDisplacement</span>
-            <span title="dlEnvironment">dlEnvironment</span>
-            <span title="dlVolume" class="on">dlVolume</span> &nbsp;&nbsp;&nbsp;
-            <span title="hydraSurface" class="on">hydraSurface</span>
-            <span title="hydraDisp">hydraDisplacement</span>
-            <span title="hydraVolume">hydraVolume</span>
+            <span title="dlSurface, dlVolume, hydraSurface" class="on">3</span>
           </span>
           <span class="makeInteractive"><input type="checkbox" /</span>
           </div>
 
           <div class="dark" id="gaffernm2">NetworkMaterial2
-            <span class="renderer dl">dl</span>
+
             <span class="terminal">
-              <span title="dlSurface">dlSurface</span>
-              <span title="dlLight">dlLight</span>
-              <span title="dlLightFilter">dlLightFilter</span>
-              <span title="dlDisplacement">dlDisplacement</span>
-              <span title="dlEnvironment">dlEnvironment</span>
-              <span title="dlVolume">dlVolume</span>
+
             </span>
             <span class="makeInteractive"><input type="checkbox" /></span>
           </div>
           <span class="makeInteractive"></span>
-          
+
           <div class="dark namespace" id="namespace2">Namespace2</div>
 
           <div class="light" id="gaffernm3">NetworkMaterial3
-            <span class="renderer prman">prman</span>
+            <span class="renderer" title="prman">1</span>
             <span class="terminal">
-              <span title="prmanBxdf" class="on">prmanBxdf</span>
-              <span title="prmanDisplacement" class="on">prmanDisplacement</span>
-              <span title="prmanDisplayfilter">prmanDisplayfilter</span>
-              <span title="prmanIntegrator">prmanIntegrator</span>
-              <span title="prmanLight">prmanLight</span>
-              <span title="prmanLightfilter">prmanLightfilter</span>
-              <span title="prmanPattern">prmanPattern</span>
-              <span title="prmanProjection">prmanProjection</span>
-              <span title="prmanSamplefilter">prmanSamplefilter</span>
+<span title="PxrSurface" class="on">1</span>
             </span>
             <span class="makeInteractive"><input type="checkbox" /></span>
           </div>
@@ -806,30 +785,18 @@
           <div class="dark namespace" id="namespace3">Namespace3</div>
 
           <div class="light" id="gaffernm4">NetworkMaterial4
-            <span class="renderer vray">vray</span>
+            <span class="renderer error" title="vray (error), hydra">2</span>
             <span class="terminal">
-              <span title="vraySurface" class="on">vraySurface</span>
-              <span title="vrayDisplacement" class="on">vrayDisplacement</span>
-              <span title="vrayLight">vrayLight</span>
-              <span title="vrayEnvironment">vrayEnvironment</span>
-              <span title="vrayExtratex">vrayExtratex</span>
-              <span title="vrayVolume">vrayVolume</span>
-              <span title="vrayFur">vrayFur</span>
+<span title="PxrBxdf, PxrDisplacement, PxrVolume" class="on">3</span>
             </span>
             <span class="makeInteractive"><input type="checkbox" /></span>
           </div>
 
 
           <div class="dark" id="gaffernm5">NetworkMaterial5
-            <span class="renderer vray">vray</span>
+            <span class="renderer" title="vray">1</span>
             <span class="terminal">
-              <span title="vraySurface" class="on">vraySurface</span>
-              <span title="vrayDisplacement">vrayDisplacement</span>
-              <span title="vrayLight">vrayLight</span>
-              <span title="vrayEnvironment">vrayEnvironment</span>
-              <span title="vrayExtratex" class="on">vrayExtratex</span>
-              <span title="vrayVolume">vrayVolume</span>
-              <span title="vrayFur">vrayFur</span>
+<span title="dlSurface, dlVolume" class="on">1</span>
             </span>
             <span class="makeInteractive"><input type="checkbox" /></span>
           </div>

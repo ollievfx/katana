@@ -758,7 +758,6 @@ svg circle {
 }
 
 .gafferLocation {
-  background: ;
   margin: 5px 5px 15px 5px;
   padding: 2px;
   height: 100%;
@@ -791,11 +790,11 @@ svg circle {
 }
 
 .table .header span:nth-of-type(3n) {
-  left: 220px;
+  left: 230px;
 }
 
 .table .header span:nth-of-type(4n) {
-  left: 420px;
+  left: 345px;
 }
 
 .table div {
@@ -918,11 +917,16 @@ svg circle {
 
 .table span.renderer {
   position: absolute;
-  left: 155px;
-  border: 0;
-  text-indent: -9999px;
-  width: 16px;
-  height: 16px;
+  left: 160px;
+  width: 15px;
+  height: 15px;
+  text-indent: 4px;
+background-color: transparent;
+  color:white;
+  display:inline-block;
+  border-radius: 8px;
+      margin-top: -1px;
+      border:1px solid grey;
 }
 
 .table span.renderer:nth-of-type(2n) {
@@ -947,13 +951,13 @@ svg circle {
 
 .table span.terminal {
   position: absolute;
-  left: 220px;
+  left: 260px;
   border: 0;
 }
 
 .table span.makeInteractive {
   position: absolute;
-  left: 450px;
+  left: 380px;
 }
 
 .table span.makeInteractive input {
@@ -1004,14 +1008,24 @@ svg circle {
   padding-top: 40px;
 }
 .terminal span {
-  text-indent: -9999px;
-  width: 10px;
-  height: 10px;
-background-color: grey;
+  width: 15px;
+  height: 15px;
+  text-indent: 4px;
+background-color: transparent;
   color:white;
   display:inline-block;
-  border-radius: 5px;
-      margin-top: 1px;
+  border-radius: 8px;
+      margin-top: -1px;
+      border:1px solid grey;
 }
 
-.terminal span.on {  background:#3b9450;}
+.terminal span.on {  background:transparent;}
+
+.gafferLocation .jump {
+  background-image: url('jump.png'), url('cog.png');
+  background-position: left top, 380px top;
+  background-repeat: no-repeat, no-repeat;
+  height: 15px;
+}
+.gafferLocation input {left:35px;}
+.error {color: #d66161 !important;}
