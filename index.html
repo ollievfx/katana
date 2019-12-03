@@ -746,7 +746,12 @@
   </div>
 
         <div class="table">
-          <div class="header"><span>Name</span><span>Renderer(s)</span><span>Terminals</span></div>
+          <div class="header">
+            <span>Name</span>
+            <span>Renderer(s)</span>
+            <span>Terminals</span>
+            <span>MakeInteractive</span>
+          </div>
           <div class="dark namespace" id="namespace1">Namespace1</div>
           <div class="light" id="gaffernm1">NetworkMaterial1
             <span class="renderer dl">dl</span>
@@ -762,6 +767,7 @@
             <span title="hydraDisp">hydraDisplacement</span>
             <span title="hydraVolume">hydraVolume</span>
           </span>
+          <span class="makeInteractive"><input type="checkbox" /</span>
           </div>
 
           <div class="dark" id="gaffernm2">NetworkMaterial2
@@ -774,7 +780,10 @@
               <span title="dlEnvironment">dlEnvironment</span>
               <span title="dlVolume">dlVolume</span>
             </span>
+            <span class="makeInteractive"><input type="checkbox" /></span>
           </div>
+          <span class="makeInteractive"></span>
+          
           <div class="dark namespace" id="namespace2">Namespace2</div>
 
           <div class="light" id="gaffernm3">NetworkMaterial3
@@ -790,13 +799,15 @@
               <span title="prmanProjection">prmanProjection</span>
               <span title="prmanSamplefilter">prmanSamplefilter</span>
             </span>
+            <span class="makeInteractive"><input type="checkbox" /></span>
           </div>
 
 
           <div class="dark namespace" id="namespace3">Namespace3</div>
+
           <div class="light" id="gaffernm4">NetworkMaterial4
-            <span title="dlVolume" class="renderer vray">vray</span>
-            <span title="dlVolume" class="terminal">
+            <span class="renderer vray">vray</span>
+            <span class="terminal">
               <span title="vraySurface" class="on">vraySurface</span>
               <span title="vrayDisplacement" class="on">vrayDisplacement</span>
               <span title="vrayLight">vrayLight</span>
@@ -805,6 +816,7 @@
               <span title="vrayVolume">vrayVolume</span>
               <span title="vrayFur">vrayFur</span>
             </span>
+            <span class="makeInteractive"><input type="checkbox" /></span>
           </div>
 
 
@@ -819,6 +831,7 @@
               <span title="vrayVolume">vrayVolume</span>
               <span title="vrayFur">vrayFur</span>
             </span>
+            <span class="makeInteractive"><input type="checkbox" /></span>
           </div>
 
           <div class="dark base">&nbsp;</div>
@@ -843,10 +856,6 @@
 </div>
 
           <div class="nodeParameterContainer">
-          <div id="params">
-            <div class="parameterRow">name <input value="NetworkMaterial1" /></div>
-            <div class="parameterRow">makeinteractive <input type="dropdown" /></div>
-          </div>
           <div class="parameterInterface1">
             <div class="parametersBox">
               <p>Parameters</p>
@@ -886,9 +895,7 @@
           </div>
 
           <div id="params">
-            <div class="parameterRow">name <input value="NetworkMaterial2" /></div>
-            <div class="parameterRow">makeinteractive <input type="dropdown" /></div>
-          </div>
+</div>
           <div class="parameterInterface2">
             <div class="parametersBox">
               <p>Parameters</p>
@@ -908,10 +915,6 @@
             <div class="materialInterface">Material Interface</div>
           </div>
 
-          <div id="params">
-            <div class="parameterRow">name <input value="NetworkMaterial3" /></div>
-            <div class="parameterRow">makeinteractive <input type="dropdown" /></div>
-          </div>
           <div class="parameterInterface3">
             <div class="parametersBox">
               <p>Parameters</p>
@@ -930,12 +933,7 @@
             <div class="materialInterface">Material Interface</div>
           </div>
 
-          <div id="params">
-            <div class="parameterRow">name <input value="NetworkMaterial4" /></div>
-            <div class="parameterRow">makeinteractive <input type="dropdown" /></div>
-          </div>
           <div class="parameterInterface4">
-
             <div class="parametersBox">
               <p>Parameters</p>
               <div class="parametersBoxInner">
@@ -952,10 +950,6 @@
             <div class="materialInterface">Material Interface</div>
           </div>
 
-          <div id="params">
-            <div class="parameterRow">name <input value="NetworkMaterial5" /></div>
-            <div class="parameterRow">makeinteractive <input type="dropdown" /></div>
-          </div>
           <div class="parameterInterface5">
             <div class="parametersBox">
               <p>Parameters</p>

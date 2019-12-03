@@ -794,6 +794,10 @@ svg circle {
   left: 220px;
 }
 
+.table .header span:nth-of-type(4n) {
+  left: 420px;
+}
+
 .table div {
   padding: 5px 15px;
   cursor: pointer;
@@ -947,6 +951,29 @@ svg circle {
   border: 0;
 }
 
+.table span.makeInteractive {
+  position: absolute;
+  left: 450px;
+}
+
+.table span.makeInteractive input {
+  border: 1px solid grey;
+  background: transparent;
+  height:15px;
+  width:15px;
+  margin:0;
+  padding:0;
+
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    outline: none;
+}
+.table span.makeInteractive input:checked {
+    background: url('tick.png') center center no-repeat;
+}
+
 .table span.active {
   color: #529652;
   border: 0;
@@ -984,6 +1011,7 @@ background-color: grey;
   color:white;
   display:inline-block;
   border-radius: 5px;
+      margin-top: 1px;
 }
 
 .terminal span.on {  background:#3b9450;}
