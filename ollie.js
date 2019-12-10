@@ -171,16 +171,11 @@ $(function() {
 });
 
 $(function() {
-  $("#node").draggable();
-
+$( "#node" ).draggable({ containment: "parent" });
+  $( "#hudContainer" ).draggable({ containment: "parent" });
   $("#hudContainer").draggable({
     drag: function(event, ui) {
       $(".jquery-line").remove();
-      ui.position.left = Math.max(8, ui.position.left);
-      ui.position.left = Math.min(520, ui.position.left);
-      ui.position.top = Math.min(530, ui.position.top);
-      ui.position.top = Math.max(95, ui.position.top);
-
       function getOffset(el) {
         var _x = 0;
         var _y = 0;
@@ -193,6 +188,7 @@ $(function() {
           top: _y,
           left: _x
         };
+
       }
 
       var fromPoint = getOffset($('#anchor')[0]);
@@ -208,6 +204,8 @@ $(function() {
       $.line(from, to);
     }
   });
+
+
 });
 
 $(document).ready(function() {
@@ -215,20 +213,21 @@ $(document).ready(function() {
   $("#networkmaterial2Params").hide();
   $("#networkmaterial3Params").hide();
   $("#networkmaterial4Params").hide();
-    $("#networkmaterial5Params").hide();
+  $("#networkmaterial5Params").hide();
   $("#nm1group").hide();
   $("#nm1group2").hide();
   $("#nm2group").hide();
   $("#nm3group").hide();
   $("#nm4group").hide();
-    $("#nm5group").hide();
-    $("#nm1group .parameterBoth").hide();
-    $("#nm1group2 .parameterBoth").hide();
-    $("#nm2group .parameterBoth").hide();
-    $("#nm3group .parameterBoth").hide();
-    $("#nm4group .parameterBoth").hide();
-    $("#nm5group .parameterBoth").hide();
-    $(".materialInterfaceContainer").hide();
+  $("#nm5group").hide();
+  $("#nm1group .parameterBoth").hide();
+  $("#nm1group2 .parameterBoth").hide();
+  $("#nm2group .parameterBoth").hide();
+  $("#nm3group .parameterBoth").hide();
+  $("#nm4group .parameterBoth").hide();
+  $("#nm5group .parameterBoth").hide();
+  $(".materialInterfaceContainer").hide();
+    $(".interfaceControlsContainer").hide();
 
 
 

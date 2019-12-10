@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <title>Katana Interactive Prototypes</title>
   <link href='style.css' rel='stylesheet'>
   <link href='wheelcolorpicker.css' rel='stylesheet'>
   <script src="jquery-3.3.1.min.js"></script>
@@ -10,7 +11,7 @@
   <script src="linedom.js"></script>
   <script src="ollie.js"></script>
 
-  <script type="text/javascript" src="jquery.wheelcolorpicker.js"></script>
+  <script src="jquery.wheelcolorpicker.js"></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
         <div class="nodeFilterBox"> Filter </div>
       </div>
       <div class="parameters">
-        <div id="overflow">
+        <div class="overflow">
           <div class="parameterSection">
             <div class="scrollWrapper">
               <div class="parameterHeading"> Outputs </div>
@@ -259,7 +260,7 @@
         <div class="nodeFilterBox"> Filter </div>
       </div>
       <div class="parameters">
-        <div id="overflow">
+        <div class="overflow">
 
           <div class="parameterSection">
             <div class="parameterHeading" id="nm1"> NetworkMaterial1 </div>
@@ -299,14 +300,12 @@
                           </svg>
                         </span>
                       </li>
-                    </ul>
                     <li><span class="terminalLeft">
                         <svg height="10" width="10">
                           <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
                         </svg>
                       </span>
                     </li>
-                  </ul>
                     </ul>
                   </div>
 
@@ -680,7 +679,7 @@
             <div class="control hue">
 
               <div><input id="hex" class="colorWheel" value="#fff" /></div>
-              <div><img src="levelSlider.png" /></div>
+              <div><img src="levelSlider.png" alt="Slider" /></div>
               <div class="HSV">
                 <ul>
                   <li>H: 42.86</li>
@@ -740,34 +739,32 @@
 
       <div class="gafferInner">
         <div class="gafferLocation">
-        <div id="params">
-          <div class="parameterRow jump">
-            <input value="/root/world/material"></div>
+          <div class="topParams">
+            <div class="parameterRow jump">
+              <input value="/root/world/material"></div>
+          </div>
         </div>
-  </div>
 
         <div class="table">
           <div class="header">
             <span>Name</span>
-            <span>Renderer(s)</span>
-            <span>Active Terminals</span>
-            <span>MakeInteractive</span>
+            <span>Renderers</span>
+            <span>Terminals</span>
+            <span>Interactive</span>
           </div>
           <div class="dark namespace" id="namespace1">Namespace1</div>
           <div class="light" id="gaffernm1">NetworkMaterial1
             <span class="renderer" title="dl, hydra">2</span>
             <span class="terminal">
-            <span title="dlSurface, dlVolume, hydraSurface" class="on">3</span>
-          </span>
-          <span class="makeInteractive"><input type="checkbox" /</span>
-          </div>
-
-          <div class="dark" id="gaffernm2">NetworkMaterial2
-
-            <span class="terminal">
-
+              <span title="dlSurface, dlVolume, hydraSurface" class="on">3</span>
             </span>
-            <span class="makeInteractive"><input type="checkbox" /></span>
+            <span class="makeInteractive"><input type="checkbox" /> </span> </div>
+            <div class="dark" id="gaffernm2">NetworkMaterial2
+
+              <span class="terminal">
+
+              </span>
+              <span class="makeInteractive"><input type="checkbox" /></span>
           </div>
           <span class="makeInteractive"></span>
 
@@ -776,7 +773,7 @@
           <div class="light" id="gaffernm3">NetworkMaterial3
             <span class="renderer" title="prman">1</span>
             <span class="terminal">
-<span title="PxrSurface" class="on">1</span>
+              <span title="PxrSurface" class="on">1</span>
             </span>
             <span class="makeInteractive"><input type="checkbox" /></span>
           </div>
@@ -787,7 +784,7 @@
           <div class="light" id="gaffernm4">NetworkMaterial4
             <span class="renderer error" title="vray (error), hydra">2</span>
             <span class="terminal">
-<span title="PxrBxdf, PxrDisplacement, PxrVolume" class="on">3</span>
+              <span title="PxrBxdf, PxrDisplacement, PxrVolume" class="on">3</span>
             </span>
             <span class="makeInteractive"><input type="checkbox" /></span>
           </div>
@@ -796,7 +793,7 @@
           <div class="dark" id="gaffernm5">NetworkMaterial5
             <span class="renderer" title="vray">1</span>
             <span class="terminal">
-<span title="dlSurface, dlVolume" class="on">1</span>
+              <span title="dlSurface, dlVolume" class="on">1</span>
             </span>
             <span class="makeInteractive"><input type="checkbox" /></span>
           </div>
@@ -805,7 +802,7 @@
         </div>
 
         <div id="networkmaterial1Params">
-          <div id="tabs">
+          <div class="tabs">
             <div class="nodeParameters active">Node Parameters</div>
             <div class="interfaceControls">Interface Controls</div>
             <div class="materialInterface">Material Interface</div>
@@ -815,54 +812,98 @@
           <div class="materialInterfaceContainer">
             <div class="table">
               <div class="header"><span>Name</span><span>Source</span></div>
-              <div class="dark namespace" id="namespace1">Base</div>
-              <div class="light" id="public1">test</div>
+              <div class="dark l1">Base</div>
+              <div class="light l2">Chan_R<span class="jump">dlColorCorrection.Red</span></div>
+              <div class="dark l2">Chan_G<span class="jump">dlColorCorrection.Green</span></div>
+              <div class="light l2">Chan_B<span class="jump">dlColorCorrection.Blue</span></div>
               <div class="dark base">&nbsp;</div>
 
             </div>
-</div>
+          </div>
 
-          <div class="nodeParameterContainer">
-          <div class="parameterInterface1">
-            <div class="parametersBox">
-              <p>Parameters</p>
-              <div class="parametersBoxInner">
-                <div class="parameterRow">Chan_R
+          <div class="interfaceControlsContainer">
+            <div class="left">
+              <div class="table">
+                <div class="row light">NetworkMaterialInterfaceControls1</div>
+                <div class="row dark">NetworkMaterialInterfaceControls2</div>
+                <div class="row light">NetworkMaterialInterfaceControls3</div>
+                <div class="row dark">NetworkMaterialInterfaceControls4</div>
+
+            </div>
+          </div>
+            <div class="right">
+              <div class="parametersBox">
+                <div class="gafferHeader">
+                  <p>NetworkMaterialInterfaceControls1 <span class="nodeType">NetworkMaterialCreate</span></p>
+                </div>
+                <div class="parametersBoxInner">
+                  <div class="parameterRow">Chan_R
                     <select>
                       <option value="R">R</option>
                       <option value="G">G</option>
                       <option value="B" selected="selected">B</option>
                     </select>
-                </div>
-                <div class="parameterRow">Chan_G
-                  <select>
-                    <option value="R" selected="selected">R</option>
-                    <option value="G">G</option>
-                    <option value="B">B</option>
-                  </select>
                   </div>
-                <div class="parameterRow">Chan_B
-                  <select>
-                    <option value="R">R</option>
-                    <option value="G" selected="selected">G</option>
-                    <option value="B">B</option>
-                  </select>
+                  <div class="parameterRow">Chan_G
+                    <select>
+                      <option value="R" selected="selected">R</option>
+                      <option value="G">G</option>
+                      <option value="B">B</option>
+                    </select>
+                  </div>
+                  <div class="parameterRow">Chan_B
+                    <select>
+                      <option value="R">R</option>
+                      <option value="G" selected="selected">G</option>
+                      <option value="B">B</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nodeParameterContainer">
+            <div class="parameterInterface1">
+              <div class="parametersBox">
+                <p>Parameters</p>
+                <div class="parametersBoxInner">
+                  <div class="parameterRow">Chan_R
+                    <select>
+                      <option value="R">R</option>
+                      <option value="G">G</option>
+                      <option value="B" selected="selected">B</option>
+                    </select>
+                  </div>
+                  <div class="parameterRow">Chan_G
+                    <select>
+                      <option value="R" selected="selected">R</option>
+                      <option value="G">G</option>
+                      <option value="B">B</option>
+                    </select>
+                  </div>
+                  <div class="parameterRow">Chan_B
+                    <select>
+                      <option value="R">R</option>
+                      <option value="G" selected="selected">G</option>
+                      <option value="B">B</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        </div>
 
         <div id="networkmaterial2Params">
-          <div id="tabs">
+          <div class="tabs">
             <div class="nodeParameters active">Node Parameters</div>
             <div class="interfaceConrols">Interface Controls</div>
             <div class="materialInterface">Material Interface</div>
           </div>
 
-          <div id="params">
-</div>
+          <div class="topParams">
+          </div>
           <div class="parameterInterface2">
             <div class="parametersBox">
               <p>Parameters</p>
@@ -876,7 +917,7 @@
         </div>
 
         <div id="networkmaterial3Params">
-          <div id="tabs">
+          <div class="tabs">
             <div class="nodeParameters active">Node Parameters</div>
             <div class="interfaceConrols">Interface Controls</div>
             <div class="materialInterface">Material Interface</div>
@@ -894,7 +935,7 @@
         </div>
 
         <div id="networkmaterial4Params">
-          <div id="tabs">
+          <div class="tabs">
             <div class="nodeParameters active">Node Parameters</div>
             <div class="interfaceConrols">Interface Controls</div>
             <div class="materialInterface">Material Interface</div>
@@ -911,7 +952,7 @@
         </div>
 
         <div id="networkmaterial5Params">
-          <div id="tabs">
+          <div class="tabs">
             <div class="nodeParameters active">Node Parameters</div>
             <div class="interfaceConrols">Interface Controls</div>
             <div class="materialInterface">Material Interface</div>
@@ -929,12 +970,14 @@
         </div>
 
       </div>
+    </div>
+  </div>
 
-      <script>
-        document.getElementById("intValue").addEventListener("mousedown", function(event) {
-          event.preventDefault();
-        });
-      </script>
+    <script>
+      document.getElementById("intValue").addEventListener("mousedown", function(event) {
+        event.preventDefault();
+      });
+    </script>
 </body>
 
 </html>
