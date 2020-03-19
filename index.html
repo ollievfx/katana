@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Katana Interactive Prototypes</title>
   <link href='style.css' rel='stylesheet'>
@@ -9,30 +8,53 @@
   <script src="jquery-ui.js"></script>
 
   <script src="linedom.js"></script>
+  <script src="rainbow.js"></script>
   <script src="ollie.js"></script>
 
   <script src="jquery.wheelcolorpicker.js"></script>
 </head>
 
 <body>
-  <div id="anchor"></div>
+  <div id="title"><span class="katana">Katana 3.6 - </span><span class="html"> HTML Edition</span></div>
+  <div id="anchor">&nbsp;</div>
+  <div id="test">&nbsp;</div>
   <div id="nodeGraphContainer">
+
+    <div class="stateFilter">
+      <label id="stateFilterLabel">NME Filter:</label>
+      <div class="stateFilterExpand" id="stateFilterExpand"> </div>
+      <div id="stateFilterBoxes">
+        <div class="stateFilterBox active" id="nodeEdited">E</div>
+        <div class="stateFilterBox active" id="nodeNew">N</div>
+        <div class="stateFilterBox" id="nodeDisconnected">X</div>
+        <div class="stateFilterBox" id="nodeDeleted">D</div>
+        <div class="stateFilterBox" id="nodeUnedited">U</div>
+      </div>
+    </div>
+
+
+
     <div id="node" class="element">
-      <div class="nodeHeader"> DiffuseTex_CarUV </div>
-      <div class="nodeUtils">
+      <div id="states">
+        <div id="min" class="active" title="Minimal View">Min</div>
+        <div id="std" class="active" title="Standard View">Std</div>
+        <div id="full" class="active" title="Full View">Full</div>
+      </div>
+      <div class="nodeHeader" id="nodeHeader"> DiffuseTex_CarUV </div>
+      <div class="nodeUtils" id="nodeUtils">
         <div class="nodeTypeBox">
           <select>
             <option value="file">File</option>
             <option value="checker">Checkerboard</option>
           </select>
         </div>
-        <div class="nodeFilterBox"> Filter </div>
+        <input class="nodeFilterBox" id="nodeFilter" value="Filter" />
       </div>
-      <div class="parameters">
+      <div class="parameters" id="nodeParameters">
         <div class="overflow">
           <div class="parameterSection">
             <div class="scrollWrapper">
-              <div class="parameterHeading"> Outputs </div>
+              <div class="parameterHeading expanded" id="outputGroup"> Outputs </div>
               <div class="parameterOutputs">
 
                 <div class="parameterList first">
@@ -65,9 +87,241 @@
 
           <div class="parameterSection">
 
-            <div class="parameterHeading"> Parameters </div>
+            <div class="parameterHeading expanded" id="parameterGroup"> Parameters </div>
             <div id="p1group">
-              <div class="parameterSubHeading" id="p1"> Test </div>
+              <div class="parameterSubHeading expanded" id="p1"> Test </div>
+              <div class="parameterBoth">
+                <div class="scrollWrapper">
+                  <div class="lTerminals first">
+                    <ul>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="parameterList first">
+                    <ul>
+                      <li>
+                        Filter Type
+                      </li>
+                      <li class="parameterEdited">
+                        Image Name
+                      </li>
+                      <li>
+                        Image Number
+                      </li>
+                      <li>
+                        UV Coordinates
+                      </li>
+                    </ul>
+                  </div>
+
+
+
+                  <div class="rTerminals first">
+                    <ul>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="parameterSection">
+            <div class="scrollWrapper">
+              <div id="p2group">
+                <div class="parameterSubHeading expanded" id="p2"> Test </div>
+                <div class="parameterBoth">
+
+                  <div class="lTerminals second">
+                    <ul>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="parameterList">
+                    <ul>
+                      <li class="parameterInherited">
+                        Filter Type
+                      </li>
+                      <li>
+                        Image Name
+                      </li>
+                      <li>
+                        Image Number
+                      </li>
+                      <li class="parameterInherited">
+                        UV Coordinates
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="rTerminals second">
+                    <ul>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div id="nodeFooter" class="edited"> DlShadingNode </div>
+
+    </div>
+
+    <div id="nodeTwo" class="element">
+      <div id="states">
+        <div id="min" class="active" title="Minimal View">Min</div>
+        <div id="std" class="active" title="Standard View">Std</div>
+        <div id="full" class="active" title="Full View">Full</div>
+      </div>
+      <div class="nodeHeader" id="nodeHeader"> DiffuseTex_CarUV </div>
+      <div class="nodeUtils" id="nodeUtils">
+        <div class="nodeTypeBox">
+          <select>
+            <option value="file">File</option>
+            <option value="checker">Checkerboard</option>
+          </select>
+        </div>
+        <input class="nodeFilterBox" id="nodeTwoFilter" value="Filter"> </input>
+      </div>
+      <div class="parameters" id="nodeParameters">
+        <div class="overflow">
+          <div class="parameterSection">
+            <div class="scrollWrapper">
+              <div class="parameterHeading expanded" id="outputGroup"> Outputs </div>
+              <div class="parameterOutputs">
+
+                <div class="parameterList first">
+                  <ul>
+                    <li>
+                      outColor
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="rTerminals pre">
+                  <ul>
+                    <li><span class="terminalRight">
+                        <svg height="10" width="10">
+                          <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                        </svg>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <div class="parameterSection">
+
+            <div class="parameterHeading expanded" id="parameterGroup"> Parameters </div>
+            <div id="p1group">
+              <div class="parameterSubHeading expanded" id="p1"> Test </div>
               <div class="parameterBoth">
                 <div class="scrollWrapper">
                   <div class="lTerminals first">
@@ -155,7 +409,240 @@
           <div class="parameterSection">
             <div class="scrollWrapper">
               <div id="p2group">
-                <div class="parameterSubHeading" id="p2"> Test </div>
+                <div class="parameterSubHeading expanded" id="p2"> Test </div>
+                <div class="parameterBoth">
+
+                  <div class="lTerminals second">
+                    <ul>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="parameterList">
+                    <ul>
+                      <li>
+                        Filter Type
+                      </li>
+                      <li>
+                        Image Name
+                      </li>
+                      <li class="parameterInherited">
+                        Image Number
+                      </li>
+                      <li>
+                        UV Coordinates
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="rTerminals second">
+                    <ul>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div id="nodeFooter" class="new"> DlShadingNode </div>
+
+    </div>
+
+
+    <div id="nodeThree" class="element filteredOut">
+      <div id="states">
+        <div id="min" class="active" title="Minimal View">Min</div>
+        <div id="std" class="" title="Standard View">Std</div>
+        <div id="full" class="" title="Full View">Full</div>
+      </div>
+      <div class="nodeHeader" id="nodeHeader"> DiffuseTex_CarUV </div>
+      <div class="nodeUtils" id="nodeUtils" style="display:none;">
+        <div class="nodeTypeBox">
+          <select>
+            <option value="file">File</option>
+            <option value="checker">Checkerboard</option>
+          </select>
+        </div>
+        <input class="nodeFilterBox" id="nodeThreeFilter" value="Filter"> </input>
+      </div>
+      <div class="parameters" id="nodeParameters" style="display:none;">
+        <div class="overflow">
+          <div class="parameterSection">
+            <div class="scrollWrapper">
+              <div class="parameterHeading expanded" id="outputGroup"> Outputs </div>
+              <div class="parameterOutputs">
+
+                <div class="parameterList first">
+                  <ul>
+                    <li>
+                      outColor
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="rTerminals pre">
+                  <ul>
+                    <li><span class="terminalRight">
+                        <svg height="10" width="10">
+                          <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                        </svg>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <div class="parameterSection">
+
+            <div class="parameterHeading expanded" id="parameterGroup"> Parameters </div>
+            <div id="p1group">
+              <div class="parameterSubHeading expanded" id="p1"> Test </div>
+              <div class="parameterBoth">
+                <div class="scrollWrapper">
+                  <div class="lTerminals first">
+                    <ul>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="parameterList first">
+                    <ul>
+                      <li class="parameterEdited">
+                        Filter Type
+                      </li>
+                      <li class="parameterEdited">
+                        Image Name
+                      </li>
+                      <li>
+                        Image Number
+                      </li>
+                      <li class="parameterInherited">
+                        UV Coordinates
+                      </li>
+                    </ul>
+                  </div>
+
+
+
+                  <div class="rTerminals first">
+                    <ul>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="parameterSection">
+            <div class="scrollWrapper">
+              <div id="p2group">
+                <div class="parameterSubHeading expanded" id="p2"> Test </div>
                 <div class="parameterBoth">
 
                   <div class="lTerminals second">
@@ -238,32 +725,488 @@
           </div>
 
 
-          <div class="parameterSection">
-            <div class="parameterHeading"> Color Balance </div>
-          </div>
-          <div class="parameterSection">
-            <div class="parameterHeading"> Effects </div>
-          </div>
         </div>
       </div>
-      <div class="nodeFooter"> DlShadingNode </div>
+      <div id="nodeFooter" class="unedited"> DlShadingNode </div>
 
     </div>
 
+    <div id="nodeFour" class="element filteredOut">
+      <div id="states">
+        <div id="min" class="active" title="Minimal View">Min</div>
+        <div id="std" class="active" title="Standard View">Std</div>
+        <div id="full" class="" title="Full View">Full</div>
+      </div>
+      <div class="nodeHeader" id="nodeHeader"> DiffuseTex_CarUV </div>
+      <div class="nodeUtils" id="nodeUtils">
+        <div class="nodeTypeBox">
+          <select>
+            <option value="file">File</option>
+            <option value="checker">Checkerboard</option>
+          </select>
+        </div>
+        <input class="nodeFilterBox" id="nodeFourFilter" value="Filter"> </input>
+      </div>
+      <div class="parameters" id="nodeParameters" style="display:none;">
+        <div class="overflow">
+          <div class="parameterSection">
+            <div class="scrollWrapper">
+              <div class="parameterHeading expanded" id="outputGroup"> Outputs </div>
+              <div class="parameterOutputs">
 
+                <div class="parameterList first">
+                  <ul>
+                    <li>
+                      outColor
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="rTerminals pre">
+                  <ul>
+                    <li><span class="terminalRight">
+                        <svg height="10" width="10">
+                          <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                        </svg>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <div class="parameterSection">
+
+            <div class="parameterHeading expanded" id="parameterGroup"> Parameters </div>
+            <div id="p1group">
+              <div class="parameterSubHeading expanded" id="p1"> Test </div>
+              <div class="parameterBoth">
+                <div class="scrollWrapper">
+                  <div class="lTerminals first">
+                    <ul>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="parameterList first">
+                    <ul>
+                      <li class="parameterEdited">
+                        Filter Type
+                      </li>
+                      <li class="parameterEdited">
+                        Image Name
+                      </li>
+                      <li>
+                        Image Number
+                      </li>
+                      <li class="parameterInherited">
+                        UV Coordinates
+                      </li>
+                    </ul>
+                  </div>
+
+
+
+                  <div class="rTerminals first">
+                    <ul>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="parameterSection">
+            <div class="scrollWrapper">
+              <div id="p2group">
+                <div class="parameterSubHeading expanded" id="p2"> Test </div>
+                <div class="parameterBoth">
+
+                  <div class="lTerminals second">
+                    <ul>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="parameterList">
+                    <ul>
+                      <li>
+                        Filter Type
+                      </li>
+                      <li>
+                        Image Name
+                      </li>
+                      <li>
+                        Image Number
+                      </li>
+                      <li>
+                        UV Coordinates
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="rTerminals second">
+                    <ul>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div id="nodeFooter" class="deleted"> DlShadingNode </div>
+
+    </div>
+
+    <div id="nodeFive" class="element filteredOut">
+      <div id="states">
+        <div id="min" class="active" title="Minimal View">Min</div>
+        <div id="std" class="" title="Standard View">Std</div>
+        <div id="full" class="" title="Full View">Full</div>
+      </div>
+      <div class="nodeHeader" id="nodeHeader"> DiffuseTex_CarUV </div>
+      <div class="nodeUtils" id="nodeUtils" style="display:none;">
+        <div class="nodeTypeBox">
+          <select>
+            <option value="file">File</option>
+            <option value="checker">Checkerboard</option>
+          </select>
+        </div>
+        <input class="nodeFilterBox" id="nodeFiveFilter" value="Filter"> </input>
+      </div>
+      <div class="parameters" id="nodeParameters" style="display:none;">
+        <div class="overflow">
+          <div class="parameterSection">
+            <div class="scrollWrapper">
+              <div class="parameterHeading expanded" id="outputGroup"> Outputs </div>
+              <div class="parameterOutputs">
+
+                <div class="parameterList first">
+                  <ul>
+                    <li>
+                      outColor
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="rTerminals pre">
+                  <ul>
+                    <li><span class="terminalRight">
+                        <svg height="10" width="10">
+                          <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                        </svg>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <div class="parameterSection">
+
+            <div class="parameterHeading expanded" id="parameterGroup"> Parameters </div>
+            <div id="p1group">
+              <div class="parameterSubHeading expanded" id="p1"> Test </div>
+              <div class="parameterBoth">
+                <div class="scrollWrapper">
+                  <div class="lTerminals first">
+                    <ul>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="parameterList first">
+                    <ul>
+                      <li class="parameterEdited">
+                        Filter Type
+                      </li>
+                      <li class="parameterEdited">
+                        Image Name
+                      </li>
+                      <li>
+                        Image Number
+                      </li>
+                      <li class="parameterInherited">
+                        UV Coordinates
+                      </li>
+                    </ul>
+                  </div>
+
+
+
+                  <div class="rTerminals first">
+                    <ul>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="parameterSection">
+            <div class="scrollWrapper">
+              <div id="p2group">
+                <div class="parameterSubHeading expanded" id="p2"> Test </div>
+                <div class="parameterBoth">
+
+                  <div class="lTerminals second">
+                    <ul>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="parameterList">
+                    <ul>
+                      <li>
+                        Filter Type
+                      </li>
+                      <li>
+                        Image Name
+                      </li>
+                      <li>
+                        Image Number
+                      </li>
+                      <li>
+                        UV Coordinates
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="rTerminals second">
+                    <ul>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgTeal" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgBrown" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgOrange" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalRight">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgYellow" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div id="nodeFooter" class="disconnected"> DlShadingNode </div>
+
+    </div>
 
     <div class="anchor"></div>
     <div id="sidebar" class="element">
 
       <div class="nodeHeader"> NetworkMaterial </div>
       <div class="nodeUtils">
-        <div class="nodeFilterBox"> Filter </div>
+        <input class="nodeFilterBox" id="nmFilter" value="Filter"></input>
       </div>
       <div class="parameters">
         <div class="overflow">
 
           <div class="parameterSection">
-            <div class="parameterHeading" id="nm1"> NetworkMaterial1 </div>
+            <div class="parameterHeading default" id="nm1"> NetworkMaterial1 </div>
             <div id="nm1group">
               <div class="parameterSubHeading" id="nm1dl"> dl </div>
               <div class="parameterBoth">
@@ -272,7 +1215,13 @@
                     <ul>
                       <li><span class="terminalLeft">
                           <svg height="10" width="10">
-                            <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                            <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                          </svg>
+                        </span>
+                      </li>
+                      <li><span class="terminalLeft">
+                          <svg height="10" width="10">
+                            <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                           </svg>
                         </span>
                       </li>
@@ -290,7 +1239,7 @@
                       </li>
                       <li><span class="terminalLeft">
                           <svg height="10" width="10">
-                            <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                            <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                           </svg>
                         </span>
                       </li>
@@ -300,12 +1249,6 @@
                           </svg>
                         </span>
                       </li>
-                    <li><span class="terminalLeft">
-                        <svg height="10" width="10">
-                          <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
-                        </svg>
-                      </span>
-                    </li>
                     </ul>
                   </div>
 
@@ -344,7 +1287,7 @@
                     <ul>
                       <li><span class="terminalLeft">
                           <svg height="10" width="10">
-                            <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                            <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                           </svg>
                         </span>
                       </li>
@@ -383,13 +1326,37 @@
 
 
             <div class="parameterSection">
-              <div class="parameterHeading" id="nm2"> NetworkMaterial2 </div>
+              <div class="parameterHeading green" id="nm2"> NetworkMaterial2 </div>
               <div id="nm2group">
-                <div class="parameterSubHeading" id="nm2dl"> dl </div>
+                <div class="parameterSubHeading" id="nm2redshift"> redshift </div>
                 <div class="parameterBoth">
                   <div class="scrollWrapper">
                     <div class="lTerminals first">
                       <ul>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
                         <li><span class="terminalLeft">
                             <svg height="10" width="10">
                               <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
@@ -420,22 +1387,28 @@
                     <div class="parameterList first">
                       <ul>
                         <li>
-                          dlSurface
+                          RedshiftSurface
                         </li>
                         <li>
-                          dlLight
+                          RedshiftDisplacement
                         </li>
                         <li>
-                          dlLightFilter
+                          RedshiftBump
                         </li>
                         <li>
-                          dlDisplacement
+                          RedshiftEnvironment
                         </li>
                         <li>
-                          dlEnvironment
+                          RedshiftVolume
                         </li>
                         <li>
-                          dlVolume
+                          RedshiftShadow
+                        </li>
+                        <li>
+                          RedshiftPhoton
+                        </li>
+                        <li>
+                          RedshiftLight
                         </li>
                       </ul>
                     </div>
@@ -451,22 +1424,52 @@
 
 
             <div class="parameterSection">
-              <div class="parameterHeading" id="nm3"> NetworkMaterial3 </div>
+              <div class="parameterHeading blue" id="nm3"> NetworkMaterial3 </div>
               <div id="nm3group">
-                <div class="parameterSubHeading" id="nm3dl"> prman </div>
+                <div class="parameterSubHeading" id="nm3prman"> prman </div>
                 <div class="parameterBoth">
                   <div class="scrollWrapper">
                     <div class="lTerminals first">
                       <ul>
                         <li><span class="terminalLeft">
                             <svg height="10" width="10">
-                              <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                             </svg>
                           </span>
                         </li>
                         <li><span class="terminalLeft">
                             <svg height="10" width="10">
-                              <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                             </svg>
                           </span>
                         </li>
@@ -488,16 +1491,31 @@
                     <div class="parameterList first">
                       <ul>
                         <li>
-                          PxrSurface
+                          prmanBxdf
                         </li>
                         <li>
-                          PxrDisplacement
+                          prmanDisplacement
                         </li>
                         <li>
-                          PxrLight
+                          prmanDisplayfilter
                         </li>
                         <li>
-                          PxrVolume
+                          prmanIntegrator
+                        </li>
+                        <li>
+                          prmanLight
+                        </li>
+                        <li>
+                          prmanLightfilter
+                        </li>
+                        <li>
+                          prmanPattern
+                        </li>
+                        <li>
+                          prmanProjection
+                        </li>
+                        <li>
+                          prmanSamplefilter
                         </li>
                       </ul>
                     </div>
@@ -514,34 +1532,58 @@
 
 
             <div class="parameterSection">
-              <div class="parameterHeading" id="nm4"> NetworkMaterial4 </div>
+              <div class="parameterHeading orange" id="nm4"> NetworkMaterial4 </div>
               <div id="nm4group">
-                <div class="parameterSubHeading" id="nm4dl"> vray </div>
+                <div class="parameterSubHeading" id="nm4arnold"> arnold </div>
                 <div class="parameterBoth">
                   <div class="scrollWrapper">
                     <div class="lTerminals first">
                       <ul>
                         <li><span class="terminalLeft">
                             <svg height="10" width="10">
-                              <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                             </svg>
                           </span>
                         </li>
                         <li><span class="terminalLeft">
                             <svg height="10" width="10">
-                              <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                             </svg>
                           </span>
                         </li>
                         <li><span class="terminalLeft">
                             <svg height="10" width="10">
-                              <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                             </svg>
                           </span>
                         </li>
                         <li><span class="terminalLeft">
                             <svg height="10" width="10">
-                              <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                             </svg>
                           </span>
                         </li>
@@ -551,57 +1593,133 @@
                     <div class="parameterList first">
                       <ul>
                         <li>
-                          Surface
+                          arnoldSurface
                         </li>
                         <li>
-                          Disp
+                          arnoldDisplacement
                         </li>
                         <li>
-                          Volume
+                          arnoldLight
                         </li>
                         <li>
-                          ExtraTex
+                          arnoldLightFilter
+                        </li>
+                        <li>
+                          arnoldAov
+                        </li>
+                        <li>
+                          arnoldCamera
+                        </li>
+                        <li>
+                          arnoldColorManage
+                        </li>
+                        <li>
+                          arnoldOperator
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div id="nm4group2">
+                <div class="parameterSubHeading" id="nm4hydra"> hydra </div>
+                <div class="parameterBoth">
+                  <div class="scrollWrapper">
+                    <div class="lTerminals first">
+                      <ul>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="parameterList first">
+                      <ul>
+                        <li>
+                          hydraSurface
+                        </li>
+                        <li>
+                          hydraDisplacement
+                        </li>
+                        <li>
+                          hydraVolume
                         </li>
                       </ul>
                     </div>
                   </div>
 
                 </div>
-
-
               </div>
 
             </div>
 
+
             <div class="parameterSection">
-              <div class="parameterHeading" id="nm5"> NetworkMaterial5 </div>
+              <div class="parameterHeading sand" id="nm5"> NetworkMaterial5 </div>
               <div id="nm5group">
-                <div class="parameterSubHeading" id="nm5dl"> vray </div>
+                <div class="parameterSubHeading" id="nm5vray"> vray </div>
                 <div class="parameterBoth">
                   <div class="scrollWrapper">
                     <div class="lTerminals first">
                       <ul>
                         <li><span class="terminalLeft">
                             <svg height="10" width="10">
-                              <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                             </svg>
                           </span>
                         </li>
                         <li><span class="terminalLeft">
                             <svg height="10" width="10">
-                              <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                             </svg>
                           </span>
                         </li>
                         <li><span class="terminalLeft">
                             <svg height="10" width="10">
-                              <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                             </svg>
                           </span>
                         </li>
                         <li><span class="terminalLeft">
                             <svg height="10" width="10">
-                              <circle cx="5" cy="5" r="3" class="svgGreen" stroke-width="2" fill="none" />
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span class="terminalLeft">
+                            <svg height="10" width="10">
+                              <circle cx="5" cy="5" r="3" class="svgGrey" stroke-width="2" fill="none" />
                             </svg>
                           </span>
                         </li>
@@ -611,16 +1729,25 @@
                     <div class="parameterList first">
                       <ul>
                         <li>
-                          Surface
+                          vraySurface
                         </li>
                         <li>
-                          Disp
+                          vrayDisplacement
                         </li>
                         <li>
-                          Volume
+                          vrayLight
                         </li>
                         <li>
-                          ExtraTex
+                          vrayEnvironment
+                        </li>
+                        <li>
+                          vrayExtratex
+                        </li>
+                        <li>
+                          vrayVolume
+                        </li>
+                        <li>
+                          vrayFur
                         </li>
                       </ul>
                     </div>
@@ -741,7 +1868,13 @@
         <div class="gafferLocation">
           <div class="topParams">
             <div class="parameterRow jump">
-              <input value="/root/world/material"></div>
+              <input value="/root/world/material">
+            </div>
+          </div>
+          <div class="topParams">
+            <div class="parameterRow">
+              <p class="add">Add</p>
+            </div>
           </div>
         </div>
 
@@ -751,24 +1884,31 @@
             <span>Renderers</span>
             <span>Terminals</span>
             <span>Interactive</span>
+            <span>Color</span>
           </div>
-          <div class="dark namespace" id="namespace1">Namespace1</div>
+          <div class="dark namespace expanded" id="namespace1">Namespace1</div>
           <div class="light" id="gaffernm1">NetworkMaterial1
             <span class="renderer" title="dl, hydra">2</span>
             <span class="terminal">
               <span title="dlSurface, dlVolume, hydraSurface" class="on">3</span>
             </span>
-            <span class="makeInteractive"><input type="checkbox" /> </span> </div>
-            <div class="dark" id="gaffernm2">NetworkMaterial2
+            <span class="makeInteractive"><input type="checkbox" /> </span>
+            <span class="color default"> </span>
 
-              <span class="terminal">
 
-              </span>
-              <span class="makeInteractive"><input type="checkbox" /></span>
+          </div>
+          <div class="dark" id="gaffernm2">NetworkMaterial2
+
+            <span class="terminal">
+
+            </span>
+            <span class="makeInteractive"><input type="checkbox" /></span>
+            <span class="color green"> </span>
           </div>
           <span class="makeInteractive"></span>
 
-          <div class="dark namespace" id="namespace2">Namespace2</div>
+
+          <div class="dark namespace expanded" id="namespace2">Namespace2</div>
 
           <div class="light" id="gaffernm3">NetworkMaterial3
             <span class="renderer" title="prman">1</span>
@@ -776,10 +1916,11 @@
               <span title="PxrSurface" class="on">1</span>
             </span>
             <span class="makeInteractive"><input type="checkbox" /></span>
+            <span class="color blue"> </span>
           </div>
 
 
-          <div class="dark namespace" id="namespace3">Namespace3</div>
+          <div class="dark namespace expanded" id="namespace3">Namespace3</div>
 
           <div class="light" id="gaffernm4">NetworkMaterial4
             <span class="renderer error" title="vray (error), hydra">2</span>
@@ -787,6 +1928,7 @@
               <span title="PxrBxdf, PxrDisplacement, PxrVolume" class="on">3</span>
             </span>
             <span class="makeInteractive"><input type="checkbox" /></span>
+            <span class="color orange"> </span>
           </div>
 
 
@@ -796,6 +1938,7 @@
               <span title="dlSurface, dlVolume" class="on">1</span>
             </span>
             <span class="makeInteractive"><input type="checkbox" /></span>
+            <span class="color sand"> </span>
           </div>
 
           <div class="dark base">&nbsp;</div>
@@ -829,8 +1972,8 @@
                 <div class="row light">NetworkMaterialInterfaceControls3</div>
                 <div class="row dark">NetworkMaterialInterfaceControls4</div>
 
+              </div>
             </div>
-          </div>
             <div class="right">
               <div class="parametersBox">
                 <div class="gafferHeader">
@@ -973,11 +2116,11 @@
     </div>
   </div>
 
-    <script>
-      document.getElementById("intValue").addEventListener("mousedown", function(event) {
-        event.preventDefault();
-      });
-    </script>
+  <script>
+    document.getElementById("intValue").addEventListener("mousedown", function(event) {
+      event.preventDefault();
+    });
+  </script>
 </body>
 
 </html>

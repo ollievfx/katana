@@ -1,3 +1,21 @@
+:root {
+  --default: #5f5e5e;
+  --green: #3B9450;
+  --yellow: #AC9D37;
+  --orange: #944B2B;
+  --purple: #7C487D;
+  --teal: #227F7E;
+  --hotpink: #8D245B;
+  --blue: #3B5D94;
+  --violet: #5E3686;
+  /*nme states*/
+  --edited: #bb9426;
+  --unedited: #565656;
+  --new: #55713a;
+  --disconnected: #5077ab;
+  --deleted: #983e3e;
+}
+
 body {
   font-size: 11px;
   font-family: Verdana;
@@ -21,14 +39,14 @@ body {
   position: absolute;
   top: 60px;
   left: 830px;
-  width: 510px;
+  width: 1084px;
   height: 620px;
 }
 
 #parameterContainer {
   position: absolute;
-  top: 65px;
-  left: 1350px;
+  top: 668px;
+  left: 6px;
   width: 500px;
   height: 620px;
 }
@@ -43,6 +61,10 @@ li {
   position: relative;
 }
 
+#node li, #nodeTwo li, #nodeThree li, #nodeFour li, #nodeFive li {
+  cursor: pointer;
+}
+
 ul {
   padding: 8px 12px;
   margin: 0;
@@ -51,14 +73,13 @@ ul {
 /* -------------------------- Hud -------------------------- */
 #hudContainer {
   opacity: 0.95;
-
   position: absolute;
   left: 150px;
   top: 200px;
 }
 
 #hud {
-    zoom: 0.8;
+  zoom: 0.8;
   width: 460px;
   float: left;
   min-height: 220px;
@@ -478,17 +499,40 @@ svg circle {
   fill: grey;
 }
 
-#node, #sidebar {
+#node, #nodeTwo, #nodeThree, #nodeFour, #nodeFive, #sidebar {
   width: 150px;
   position: absolute;
-  top: 0px;
+  top: 45px;
+  left: 65px;
   background: #252525;
   margin: 50px;
   border: 2px solid #484848;
+  border-radius: 5px;
 }
-#node {
-  margin: 70px 160px 5px 10px;
+
+#nodeTwo {
+  left: 265px;
+  top: 20px;
 }
+
+#nodeThree {
+  left: 465px;
+  top: 35px;
+}
+
+#nodeFour {
+  left: 665px;
+}
+
+#nodeFive {
+  left: 465px;
+  top: 250px;
+}
+
+#node, #nodeTwo, #nodeThree, #nodeFour, #nodeFive {
+  margin: 70px 160px 5px 40px;
+}
+
 #sidebar {
   right: 0px;
   left: auto;
@@ -550,6 +594,8 @@ svg circle {
   padding: 10px;
   margin: auto;
   cursor: move;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .nodeUtils {
@@ -582,9 +628,14 @@ svg circle {
   border: 1px solid #484848;
   padding: 3px;
   margin: 2px auto 5px;
+  text-align: center;
+  color: #ccc;
+  outline: none;
 }
 
-.parameterSection {}
+.parameterSection {
+  position: relative;
+}
 
 .parameters {
   background: #252525;
@@ -640,6 +691,10 @@ svg circle {
 
 #sidebar .parameterSubHeading {
   margin: 10px 5px 10px 10px;
+  background: #3f3f3f;
+  background-image: url(arrowside.png);
+  background-position: 10px center;
+  background-repeat: no-repeat;
 }
 
 .parameterSubHeading {
@@ -654,8 +709,17 @@ svg circle {
   cursor: pointer;
 }
 
-.parameterSubHeading.expanded, .parameterHeading.expanded {
-  background-image: url(arrowdown.png);
+.expanded {
+  background-image: url(arrowdown.png) !important;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+.disabled.expanded {
+  background-image: url('ignore16.png'), url(arrowdown.png) !important;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, 10px center;
+  background-color: #262626;
 }
 
 .scrollWrapper {
@@ -716,12 +780,14 @@ svg circle {
   border-radius: 10px;
 }
 
-.nodeFooter {
+#nodeFooter {
   height: 15px;
   margin-top: 5px;
   background: #3b3b3b;
   border-top: 1px solid #484848;
   padding: 5px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .gafferbox {
@@ -761,7 +827,7 @@ svg circle {
 }
 
 .gafferLocation {
-  margin: 5px 5px 15px 5px;
+  margin: 5px 5px 0px 5px;
   padding: 2px;
   height: 100%;
   text-align: left;
@@ -801,8 +867,12 @@ svg circle {
   left: 300px;
 }
 
+.table .header span:nth-of-type(5n) {
+  left: 380px;
+}
+
 .table div {
-  padding: 5px 15px;
+  padding: 5px 30px;
   cursor: pointer;
 }
 
@@ -816,8 +886,12 @@ svg circle {
   background-repeat: no-repeat !important;
 }*/
 .table div.namespace {
-  padding: 5px;
+  padding: 5px 5px 5px 25px;
   border: 0;
+  cursor: pointer;
+  background-image: url(arrowside.png);
+  background-position: 10px center;
+  background-repeat: no-repeat;
 }
 
 .table .light {
@@ -830,7 +904,7 @@ svg circle {
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
-.table .namespace, .table .base {
+.table .base {
   background-image: none !important;
 }
 
@@ -965,7 +1039,101 @@ svg circle {
   background: url('tick.png') center center no-repeat;
 }
 
-.table span.active {
+.table span.color {
+  position: absolute;
+  left: 390px;
+  height: 12px;
+  width: 12px;
+  background: #2f2f2f;
+  border: 1px solid #1f1f1f;
+}
+
+span.color.default {
+  background: var(--default) !important;
+}
+
+span.color.green {
+  background: var(--green) !important;
+}
+
+span.color.yellow {
+  background: var(--yellow) !important;
+}
+
+span.color.orange {
+  background: var(--orange) !important;
+}
+
+span.color.purple {
+  background: var(--purple) !important;
+}
+
+span.color.teal {
+  background: var(--teal) !important;
+}
+
+span.color.hotpink {
+  background: var(--hotpink) !important;
+}
+
+span.color.blue {
+  background: var(--blue) !important;
+}
+
+span.color.violet {
+  background: var(--violet) !important;
+}
+
+span.color.sand {
+  background: var(--sand) !important;
+}
+
+#sidebar .parameterHeading {
+  border-left-width: 3px;
+  border-left-style: solid;
+}
+
+#sidebar .parameterHeading.default {
+  border-left-color: var(--default) !important;
+}
+
+#sidebar .parameterHeading.green {
+  border-left-color: var(--green) !important;
+}
+
+#sidebar .parameterHeading.yellow {
+  border-left-color: var(--yellow) !important;
+}
+
+#sidebar .parameterHeading.orange {
+  border-left-color: var(--orange) !important;
+}
+
+#sidebar .parameterHeading.purple {
+  border-left-color: var(--purple) !important;
+}
+
+#sidebar .parameterHeading.teal {
+  border-left-color: var(--teal) !important;
+}
+
+#sidebar .parameterHeading.hotpink {
+  border-left-color: var(--hotpink) !important;
+}
+
+#sidebar .parameterHeading.blue {
+  border-left-color: var(--blue) !important;
+}
+
+#sidebar .parameterHeading.violet {
+  border-left-color: var(--violet) !important;
+}
+
+#sidebar .parameterHeading.sand {
+  border-left-color: var(--sand) !important;
+}
+
+terminalLeft .table span.active {
   color: #529652;
   border: 0;
   background: none !important;
@@ -1012,14 +1180,14 @@ svg circle {
 
 .gafferLocation .jump {
   background-image: url('jump.png'), url('cog.png');
-  background-position: left top, 380px top;
+  background-position: left top, 475px top;
   background-repeat: no-repeat, no-repeat;
   height: 15px;
 }
 
 .gafferLocation input {
   left: 35px;
-  width: 510px;
+  width: 430px;
 }
 
 .error {
@@ -1028,33 +1196,284 @@ svg circle {
 
 .l1 {
   background-image: url('l1.png');
-  background-position:20px 6px;
+  background-position: 20px 6px;
   background-repeat: no-repeat;
-text-indent: 30px;
+  text-indent: 30px;
 }
+
 .l2 {
   background-image: url('l2.png');
-  background-position:50px 2px;
+  background-position: 50px 2px;
   background-repeat: repeat-y;
   text-indent: 50px;
 }
 
 .l2 span {
-    position:absolute;
+  position: absolute;
   left: 100px;
 }
+
 .l2 span.jump {
-background-image: url('jump_green.png');
-background-position: 20px top;
-background-repeat: no-repeat;
-height: 15px;
+  background-image: url('jump_green.png');
+  background-position: 20px top;
+  background-repeat: no-repeat;
+  height: 15px;
 }
 
-.left {float: left; width: 100px; overflow:hidden;}
-.right {float: left; width: 440px;}
+.left {
+  float: left;
+  width: 100px;
+  overflow: hidden;
+}
 
-.interfaceControlsContainer .gafferHeader{
+.right {
+  float: left;
+  width: 440px;
+}
+
+.interfaceControlsContainer .gafferHeader {
   padding: 5px;
   pointer: auto;
   background: none;
+}
+
+.disabled {
+  background-image: url('ignore16.png'), url(arrowside.png);
+  ;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, 10px center;
+  background-color: #262626;
+}
+
+.gafferbox .disabled {
+  background: url('ignore16.png') no-repeat left !important;
+  color: #757575;
+}
+
+.add {
+  width: 20px;
+  height: 20px;
+  margin: 20px 0 -10px 0;
+  padding: 0;
+  display: block;
+  background: url('plus16.png') center center no-repeat;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+
+.add:hover {
+  background: url('plusHilite16.png') center center no-repeat #3d3d3d;
+}
+
+#gaffernm5 {
+  padding: 5px 25px;
+}
+
+#states {
+  position: absolute;
+  left: -12px;
+  top: 1px;
+  cursor: pointer;
+  text-indent: -9999px;
+  opacity: 0.6;
+}
+
+#min, #std, #full {
+  background: #676767;
+  width: 1px;
+  height: 1px;
+  padding: 2px;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+#states .active {
+  filter: brightness(1.5);
+}
+
+.stateSelection {
+  position: absolute;
+  top: -33px;
+  left: 10px;
+}
+
+.stateSelectionBox {
+  float: left;
+  height: 15px;
+  background: #2e2e2e;
+  padding: 3px 10px;
+  border: 1px solid #484848;
+  cursor: pointer;
+}
+
+.stateSelectionBox:hover {
+  background: #484848;
+}
+
+.stateSelectionBox.active {
+  background: #484848;
+}
+
+#node.selected, #nodeTwo.selected, #nodeThree.selected, #nodeFour.selected, #nodeFive.selected  {
+  border: 2px solid #CCC;
+}
+
+.parameterEdited {
+  color: #eab729 !important;
+}
+
+.parameterInherited {
+  color: #877636;
+}
+
+.parameterForced {
+  color: #8259ff;
+}
+
+.stateFilter {
+  position: absolute;
+  top: 39px;
+  left: 145px;
+}
+
+.stateFilter label {
+  float: left;
+  height: 15px;
+  padding: 3px;
+}
+
+.stateFilter label.active {
+  color: #bb9426
+}
+
+#stateFilterBoxes {
+  float: left;
+}
+
+.stateFilterBox, .stateFilterExpand {
+  float: left;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  padding: 3px;
+  margin: auto 5px;
+  border-radius: 3px;
+  background: transparent;
+}
+
+.stateFilterExpand {
+  display: block;
+  background: url('rightarrow.png') 0px 2px no-repeat;
+}
+
+.on {
+  background: url('leftarrow.png') 0px 2px no-repeat;
+}
+
+.stateFilterBox:hover {
+  filter: brightness(1.2);
+}
+
+.stateFilterBox.active {
+  border: 1px solid white;
+}
+
+#nodeEdited {
+  color: var(--edited);
+  border: 1px solid var(--edited);
+}
+
+#nodeEdited.active {
+  background: var(--edited);
+  color: #252525;
+}
+
+#nodeNew {
+  color: var(--new);
+  border: 1px solid var(--new);
+}
+
+#nodeNew.active {
+  background: var(--new);
+  color: #252525;
+}
+
+#nodeDisconnected {
+  color: var(--disconnected);
+  border: 1px solid var(--disconnected);
+}
+
+#nodeDisconnected.active {
+  background: var(--disconnected);
+  color: #252525;
+}
+
+#nodeDeleted {
+  color: var(--deleted);
+  border: 1px solid var(--deleted);
+}
+
+#nodeDeleted.active {
+  background: var(--deleted);
+  color: #252525;
+}
+
+#nodeUnedited {
+  color: var(--unedited);
+  border: 1px solid var(--unedited);
+}
+
+#nodeUnedited.active {
+  background: var(--unedited);
+  color: #252525;
+}
+
+.filteredOut {
+  filter: brightness(50%) contrast(0.8) !important;
+}
+
+#nodeFooter.edited {
+  background: var(--edited);
+  color: #252525
+}
+
+#nodeFooter.new {
+  background: var(--new);
+  color: #252525
+}
+
+#nodeFooter.disconnected {
+  filter: brightness(1.2);
+  background: var(--disconnected);
+  color: #252525
+}
+
+#nodeFooter.deleted {
+  filter: brightness(1.2);
+  background: var(--deleted);
+  color: #252525
+}
+
+#nodeFooter.unedited {
+  filter: brightness(1.2);
+  background: var(--unedited);
+  color: #252525
+}
+
+#title {
+  position: absolute;
+  top: 4px;
+  left: 80px;
+}
+
+span.katana {
+  color: #252525;
+  display: inline-block;
+}
+
+span.html {
+  color: #FF00FF;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  display: inline-block;
+  margin-left: 5px;
 }
