@@ -442,6 +442,14 @@ svg circle {
   fill: #252525;
 }
 
+.svgError {
+  stroke: #ed3939d6;
+  fill: #ed3939d6;
+}
+
+li.error {
+  color: #d63e3e;
+}
 .svgGreen {
   stroke: #3b9450;
   fill: #3b9450;
@@ -1191,7 +1199,7 @@ terminalLeft .table span.active {
 }
 
 .error {
-  color: #d66161 !important;
+  border-color: #d66161 !important;
 }
 
 .l1 {
