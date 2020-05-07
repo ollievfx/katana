@@ -443,11 +443,14 @@ svg circle {
 }
 
 .svgError {
-  stroke: #ed3939d6;
-  fill: #ed3939d6;
+  stroke: #d63e3e;
+  fill: #d63e3e;
 }
 
 li.error {
+  color: #db4173;
+}
+li.erroralt {
   color: #d63e3e;
 }
 .svgGreen {
