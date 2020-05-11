@@ -787,7 +787,7 @@ li.erroralt {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #4A4A4A;
+  background: rgba(76,76,76,0.6);
   border-radius: 10px;
 }
 
