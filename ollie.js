@@ -1,4 +1,4 @@
-//load colorpicker from jquery.wheelcolorpicker.js
+//load colorpicker from jquery.wheelcolorpicker.js 
 $(function() {
   $('.colorWheel').wheelColorPicker();
 });
